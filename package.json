@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.61",
+    "@ai-sdk/react": "^3.0.156",
     "@clerk/nextjs": "^6.34.0",
     "@portabletext/react": "^4.0.3",
     "@radix-ui/react-dialog": "^1.1.15",
