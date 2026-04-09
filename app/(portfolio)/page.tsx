@@ -1,9 +1,5 @@
-import PortfolioContent from "@/components/PortfolioContent";
+import { HomeAwakening } from "@/components/pages/HomeAwakening";
 
-export default async function Home() {
-  return (
-    <main className="min-h-screen">
-      <PortfolioContent />
-    </main>
-  );
+export default function Home() {
+  return <HomeAwakening />;
 }

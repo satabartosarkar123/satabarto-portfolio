@@ -4,15 +4,15 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { SanityLive } from "@/sanity/lib/live";
 import "../globals.css";
 import { draftMode } from "next/headers";
-
 import { VisualEditing } from "next-sanity/visual-editing";
 import { AppSidebar } from "@/components/app-sidebar";
-import { ModeToggle } from "@/components/DarkModeToggle";
 import { DisableDraftMode } from "@/components/DisableDraftMode";
-import { FloatingDock } from "@/components/FloatingDock";
 import SidebarToggle from "@/components/SidebarToggle";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { BreathingBackground } from "@/components/cosmos/BreathingBackground";
+import { ParticleField } from "@/components/cosmos/ParticleField";
+import { CosmicNav } from "@/components/cosmos/CosmicNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,8 +25,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Satabarto Sarkar | Computer Science Student",
-  description: "Portfolio of Satabarto Sarkar, demonstrating complex backend architectures, fault-tolerant ledgers, and data pipelines.",
+  title: "Satabarto Sarkar — Systems Engineer",
+  description:
+    "A living digital ecosystem revealing the mind of a systems-oriented engineer. Backend architectures, AI pipelines, and fault-tolerant design.",
 };
 
 export default async function RootLayout({
@@ -38,7 +39,7 @@ export default async function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0B140F]`}
         >
           <ThemeProvider
             attribute="class"
@@ -46,26 +47,25 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            {/* Living World Layers */}
+            <BreathingBackground />
+            <ParticleField count={35} />
 
+            {/* Navigation */}
+            <CosmicNav />
+
+            {/* Content */}
             <SidebarProvider defaultOpen={false}>
-              <SidebarInset className="">{children}</SidebarInset>
+              <SidebarInset className="">
+                <main className="relative z-10 pt-16">{children}</main>
+              </SidebarInset>
 
               <AppSidebar side="right" />
-
-              <FloatingDock />
               <SidebarToggle />
-
-              {/* Mode Toggle - Desktop: bottom right next to AI chat, Mobile: top right next to burger menu */}
-              <div className="fixed md:bottom-6 md:right-24 top-4 right-18 md:top-auto md:left-auto z-20">
-                <div className="w-10 h-10 md:w-12 md:h-12">
-                  <ModeToggle />
-                </div>
-              </div>
             </SidebarProvider>
 
-            {/* Live content API */}
+            {/* Sanity */}
             <SanityLive />
-
             {(await draftMode()).isEnabled && (
               <>
                 <VisualEditing />
