@@ -1,148 +1,95 @@
 import Link from "next/link";
-import { defineQuery } from "next-sanity";
-import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
-import { LayoutTextFlip } from "@/components/ui/layout-text-flip";
-import { urlFor } from "@/sanity/lib/image";
-import { sanityFetch } from "@/sanity/lib/live";
-import { ProfileImage } from "./ProfileImage";
-
-const HERO_QUERY = defineQuery(`*[_id == "singleton-profile"][0]{
-  firstName,
-  lastName,
-  headline,
-  headlineStaticText,
-  headlineAnimatedWords,
-  headlineAnimationDuration,
-  shortBio,
-  email,
-  phone,
-  location,
-  availability,
-  socialLinks,
-  yearsOfExperience,
-  profileImage
-}`);
+import Image from "next/image";
 
 export async function HeroSection() {
-  const { data: profile } = await sanityFetch({ query: HERO_QUERY });
-
-  if (!profile) {
-    return null;
-  }
-
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden nebula-gradient"
     >
-      {/* Background Ripple Effect */}
-      <BackgroundRippleEffect rows={8} cols={27} cellSize={56} />
+      {/* Floating Particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="particle" style={{ top: "10%", left: "15%", ["--duration" as string]: "7s", ["--delay" as string]: "0s" }} />
+        <div className="particle" style={{ top: "20%", left: "70%", ["--duration" as string]: "9s", ["--delay" as string]: "1s" }} />
+        <div className="particle" style={{ top: "60%", left: "25%", ["--duration" as string]: "8s", ["--delay" as string]: "2s" }} />
+        <div className="particle" style={{ top: "40%", left: "80%", ["--duration" as string]: "6s", ["--delay" as string]: "0.5s" }} />
+        <div className="particle" style={{ top: "75%", left: "55%", ["--duration" as string]: "10s", ["--delay" as string]: "3s" }} />
+        <div className="particle" style={{ top: "30%", left: "40%", ["--duration" as string]: "7.5s", ["--delay" as string]: "1.5s" }} />
+        <div className="particle" style={{ top: "85%", left: "10%", ["--duration" as string]: "8.5s", ["--delay" as string]: "4s" }} />
+        <div className="particle" style={{ top: "15%", left: "90%", ["--duration" as string]: "6.5s", ["--delay" as string]: "2.5s" }} />
+      </div>
 
       <div className="relative z-10 container mx-auto max-w-6xl">
-        <div className="@container">
-          <div className="grid grid-cols-1 @3xl:grid-cols-2 gap-8 @lg:gap-12 items-center">
-            {/* Text Content */}
-            <div className="@container/hero space-y-4 @md/hero:space-y-6">
-              <h1 className="text-4xl @md/hero:text-5xl @lg/hero:text-7xl font-bold tracking-tight">
-                {profile.firstName}{" "}
-                <span className="text-primary">{profile.lastName}</span>
-              </h1>
-              {profile.headlineStaticText &&
-              profile.headlineAnimatedWords &&
-              profile.headlineAnimatedWords.length > 0 ? (
-                <LayoutTextFlip
-                  text={profile.headlineStaticText}
-                  words={profile.headlineAnimatedWords}
-                  duration={profile.headlineAnimationDuration || 3000}
-                  className="text-xl @md/hero:text-2xl @lg/hero:text-3xl text-muted-foreground font-medium"
-                />
-              ) : (
-                <p className="text-xl @md/hero:text-2xl @lg/hero:text-3xl text-muted-foreground font-medium">
-                  {profile.headline}
-                </p>
-              )}
-              <p className="text-base @md/hero:text-lg text-muted-foreground leading-relaxed">
-                {profile.shortBio}
-              </p>
-
-              {profile.socialLinks && (
-                <div className="flex flex-wrap gap-3 @md/hero:gap-4 pt-4">
-                  {profile.socialLinks.github && (
-                    <Link
-                      href={profile.socialLinks.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 @md/hero:px-6 @md/hero:py-3 rounded-lg border hover:bg-accent transition-colors text-sm @md/hero:text-base"
-                    >
-                      GitHub
-                    </Link>
-                  )}
-                  {profile.socialLinks.linkedin && (
-                    <Link
-                      href={profile.socialLinks.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 @md/hero:px-6 @md/hero:py-3 rounded-lg border hover:bg-accent transition-colors text-sm @md/hero:text-base"
-                    >
-                      LinkedIn
-                    </Link>
-                  )}
-                  {profile.socialLinks.twitter && (
-                    <Link
-                      href={profile.socialLinks.twitter}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 @md/hero:px-6 @md/hero:py-3 rounded-lg border hover:bg-accent transition-colors text-sm @md/hero:text-base"
-                    >
-                      Twitter
-                    </Link>
-                  )}
-                  {profile.socialLinks.website && (
-                    <Link
-                      href={profile.socialLinks.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-4 py-2 @md/hero:px-6 @md/hero:py-3 rounded-lg border hover:bg-accent transition-colors text-sm @md/hero:text-base"
-                    >
-                      Website
-                    </Link>
-                  )}
-                </div>
-              )}
-
-              <div className="flex flex-wrap gap-4 @md/hero:gap-6 pt-4 text-xs @md/hero:text-sm text-muted-foreground">
-                {profile.email && (
-                  <div className="flex items-center gap-2">
-                    <span>📧</span>
-                    <span className="truncate">{profile.email}</span>
-                  </div>
-                )}
-                {profile.location && (
-                  <div className="flex items-center gap-2">
-                    <span>📍</span>
-                    <span>{profile.location}</span>
-                  </div>
-                )}
-                {profile.availability && (
-                  <div className="flex items-center gap-2">
-                    <span>✅</span>
-                    <span>{profile.availability}</span>
-                  </div>
-                )}
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Text Content */}
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full hud-border text-xs font-mono text-[#64FFDA] tracking-wider">
+              <span className="w-2 h-2 rounded-full bg-[#64FFDA] animate-pulse" />
+              AVAILABLE FOR OPPORTUNITIES
             </div>
 
-            {/* Profile Image */}
-            {profile.profileImage && (
-              <ProfileImage
-                imageUrl={urlFor(profile.profileImage)
-                  .width(600)
-                  .height(600)
-                  .url()}
-                firstName={profile.firstName || ""}
-                lastName={profile.lastName || ""}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#E8F5E9]">
+              Satabarto{" "}
+              <span className="text-[#64FFDA]">Sarkar</span>
+            </h1>
+
+            <p className="text-xl md:text-2xl text-[#81C784] font-medium">
+              Computer Science Student · Backend Systems · AI Pipelines
+            </p>
+
+            <p className="text-base text-[#81C784]/80 leading-relaxed max-w-lg">
+              Engineering fault-tolerant backends and intelligent data pipelines. 
+              B.Tech CSE at IEM Kolkata — GPA 9.76/10, Top 5% in Department.
+            </p>
+
+            <div className="flex flex-wrap gap-3 pt-4">
+              <Link
+                href="https://github.com/satabartosarkar123"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-lg hud-border hud-border-hover text-[#64FFDA] font-mono text-sm tracking-wide transition-all duration-300 hover:bg-[#64FFDA]/5"
+              >
+                ↗ GitHub
+              </Link>
+              <Link
+                href="https://linkedin.com/in/satabarto-sarkar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-lg hud-border hud-border-hover text-[#64FFDA] font-mono text-sm tracking-wide transition-all duration-300 hover:bg-[#64FFDA]/5"
+              >
+                ↗ LinkedIn
+              </Link>
+              <Link
+                href="mailto:satabartosarkar005@gmail.com"
+                className="px-6 py-3 rounded-lg bg-[#64FFDA]/10 hud-border text-[#64FFDA] font-mono text-sm tracking-wide transition-all duration-300 hover:bg-[#64FFDA]/20"
+              >
+                ✉ Contact
+              </Link>
+            </div>
+
+            <div className="flex flex-wrap gap-6 pt-4 text-xs text-[#81C784]/60 font-mono">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#64FFDA]/40" />
+                satabartosarkar005@gmail.com
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#64FFDA]/40" />
+                Kolkata, India
+              </div>
+            </div>
+          </div>
+
+          {/* Profile Image */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden profile-glow">
+              <Image
+                src="/images/satabarto-hero.png"
+                alt="Satabarto Sarkar"
+                fill
+                className="object-cover"
+                priority
               />
-            )}
+            </div>
           </div>
         </div>
       </div>

@@ -1,167 +1,87 @@
-import { IconAward, IconCalendar, IconExternalLink } from "@tabler/icons-react";
-import Image from "next/image";
-import Link from "next/link";
-import { defineQuery } from "next-sanity";
-import { urlFor } from "@/sanity/lib/image";
-import { sanityFetch } from "@/sanity/lib/live";
-
-const EDUCATION_QUERY =
-  defineQuery(`*[_type == "education"] | order(endDate desc, startDate desc){
-  institution,
-  degree,
-  fieldOfStudy,
-  startDate,
-  endDate,
-  current,
-  gpa,
-  description,
-  achievements,
-  logo,
-  website,
-  order
-}`);
-
 export async function EducationSection() {
-  const { data: education } = await sanityFetch({ query: EDUCATION_QUERY });
-
-  if (!education || education.length === 0) {
-    return null;
-  }
-
-  const formatDate = (date: string) => {
-    return new Date(date).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short",
-    });
-  };
+  const education = [
+    {
+      degree: "B.Tech in Computer Science & Engineering",
+      institution: "Institute of Engineering and Management, Kolkata",
+      period: "Aug 2023 – May 2027",
+      highlights: ["Ranked Top 5% in Department", "Cumulative GPA: 9.76 / 10"],
+      coursework: [
+        "Data Structures & Algorithms", "Operating Systems", "DBMS",
+        "Machine Learning", "Neural Networks & Deep Learning",
+        "Design & Analysis of Algorithms", "Quantum Computing",
+      ],
+    },
+    {
+      degree: "Higher Secondary (12th Grade) — Science (PCMB)",
+      institution: "J.N. Academy, Berhampore",
+      period: "2023",
+      highlights: ["Marks: 91.4%"],
+      coursework: [],
+    },
+    {
+      degree: "Secondary (10th Grade)",
+      institution: "J.N. Academy, Berhampore",
+      period: "2021",
+      highlights: ["Marks: 97.2%"],
+      coursework: [],
+    },
+  ];
 
   return (
-    <section
-      id="education"
-      className="relative py-20 px-6 bg-muted/30 overflow-hidden"
-    >
-      {/* Section-wide Dotted Glow Background */}
-      {/* <DottedGlowBackground
-        className="pointer-events-none opacity-30 dark:opacity-50 mask-radial-to-75% mask-radial-at-bottom"
-        opacity={0.5}
-        gap={10}
-        radius={3.5}
-        colorLightVar="--color-neutral-400"
-        glowColorLightVar="--color-primary"
-        colorDarkVar="--color-neutral-600"
-        glowColorDarkVar="--color-primary"
-        backgroundOpacity={0}
-        speedMin={0.2}
-        speedMax={0.8}
-        speedScale={1.2}
-      /> */}
-
-      <div className="container mx-auto max-w-6xl relative z-10">
+    <section id="education" className="py-24 px-6 nebula-gradient-subtle">
+      <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Education</h2>
-          <p className="text-xl text-muted-foreground">
-            My academic background
+          <p className="text-xs font-mono text-primary tracking-[0.3em] uppercase mb-3">
+            Academic Background
           </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Education</h2>
+          <div className="section-divider max-w-xs mx-auto mt-6" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="space-y-6">
           {education.map((edu) => (
             <div
-              key={`${edu.institution}-${edu.degree}-${edu.startDate}`}
-              className="group relative bg-card border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300"
+              key={edu.institution}
+              className="stardust-hover rounded-xl overflow-hidden bg-card/50 backdrop-blur-sm"
             >
-              {/* Accent gradient bar */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primary/60 to-primary/30 z-10" />
+              {/* Accent bar */}
+              <div className="h-[2px] bg-gradient-to-r from-primary/60 via-[#7c4dff]/40 to-transparent" />
 
-              <div className="relative z-10 p-6">
-                {/* Header with logo and basic info */}
-                <div className="flex items-start gap-4 mb-4">
-                  {edu.logo && (
-                    <div className="relative w-16 h-16 rounded-lg overflow-hidden border-2 border-primary/20 shrink-0 group-hover:border-primary/40 transition-colors">
-                      <Image
-                        src={urlFor(edu.logo).width(64).height(64).url()}
-                        alt={`${edu.institution} logo`}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  )}
-
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-xl font-bold mb-1 line-clamp-2 group-hover:text-primary transition-colors">
-                      {edu.degree}
-                    </h3>
-                    <p className="text-lg font-medium text-primary mb-1">
-                      {edu.institution}
-                    </p>
-                    {edu.fieldOfStudy && (
-                      <p className="text-sm text-muted-foreground">
-                        {edu.fieldOfStudy}
-                      </p>
-                    )}
+              <div className="p-6 md:p-8">
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground">{edu.degree}</h3>
+                    <p className="text-primary font-medium mt-1">{edu.institution}</p>
                   </div>
+                  <span className="text-xs font-mono text-muted-foreground hud-border px-3 py-1 rounded-full w-fit shrink-0">
+                    {edu.period}
+                  </span>
                 </div>
 
-                {/* Date and GPA badges */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-muted text-sm">
-                    <IconCalendar className="w-3.5 h-3.5" />
-                    <span>
-                      {edu.startDate && formatDate(edu.startDate)} -{" "}
-                      {edu.current
-                        ? "Present"
-                        : edu.endDate
-                          ? formatDate(edu.endDate)
-                          : "N/A"}
-                    </span>
+                {edu.highlights.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {edu.highlights.map((h) => (
+                      <span
+                        key={h}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-primary/10 text-primary"
+                      >
+                        ◈ {h}
+                      </span>
+                    ))}
                   </div>
-                  {edu.gpa && (
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                      <IconAward className="w-3.5 h-3.5" />
-                      <span>GPA: {edu.gpa}</span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Description */}
-                {edu.description && (
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                    {edu.description}
-                  </p>
                 )}
 
-                {/* Achievements */}
-                {edu.achievements && edu.achievements.length > 0 && (
-                  <div className="mb-4 p-3 rounded-lg bg-muted/50">
-                    <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
-                      <IconAward className="w-4 h-4 text-primary" />
-                      Achievements & Honors
-                    </h4>
-                    <ul className="space-y-1.5">
-                      {edu.achievements.map((achievement, idx) => (
-                        <li
-                          key={`${edu.institution}-achievement-${idx}`}
-                          className="text-xs text-muted-foreground flex items-start gap-2"
-                        >
-                          <span className="text-primary mt-1">▸</span>
-                          <span className="flex-1">{achievement}</span>
-                        </li>
+                {edu.coursework.length > 0 && (
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <p className="text-xs font-mono text-muted-foreground mb-3 tracking-wider">KEY COURSEWORK</p>
+                    <div className="flex flex-wrap gap-2">
+                      {edu.coursework.map((c) => (
+                        <span key={c} className="skill-tag px-2.5 py-1 rounded text-[10px] font-mono">
+                          {c}
+                        </span>
                       ))}
-                    </ul>
+                    </div>
                   </div>
-                )}
-
-                {/* Website link */}
-                {edu.website && (
-                  <Link
-                    href={edu.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-primary hover:underline font-medium group-hover:gap-3 transition-all"
-                  >
-                    Visit Website
-                    <IconExternalLink className="w-4 h-4" />
-                  </Link>
                 )}
               </div>
             </div>
