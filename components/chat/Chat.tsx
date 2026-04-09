@@ -1,10 +1,11 @@
 "use client";
 
 import { useChat } from "@ai-sdk/react";
+import { TextStreamChatTransport } from "ai";
 import type { CHAT_PROFILE_QUERYResult } from "@/sanity.types";
 import { useSidebar } from "../ui/sidebar";
 import { X, Send } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 
 export function Chat({
   profile,
@@ -12,11 +13,16 @@ export function Chat({
   profile: CHAT_PROFILE_QUERYResult | null;
 }) {
   const { toggleSidebar } = useSidebar();
-  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
-    api: "/api/chat",
-    body: { profile }
-  });
+  const [inputValue, setInputValue] = useState("");
 
+  const transport = useMemo(() => new TextStreamChatTransport({
+    api: "/api/chat",
+    body: { profile },
+  }), [profile]);
+
+  const { messages, sendMessage, status } = useChat({ transport });
+
+  const isLoading = status === "submitted" || status === "streaming";
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,6 +32,13 @@ export function Chat({
   const fullName = profile?.firstName 
     ? [profile.firstName, profile.lastName].filter(Boolean).join(" ")
     : "Me";
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!inputValue.trim() || isLoading) return;
+    sendMessage({ text: inputValue });
+    setInputValue("");
+  };
 
   return (
     <div className="flex flex-col h-full w-full bg-background border-l border-border relative">
@@ -45,7 +58,7 @@ export function Chat({
         {messages.length === 0 ? (
           <div className="flex items-center justify-center p-6 text-center text-muted-foreground bg-muted/50 rounded-lg h-full">
             <p>
-              Hi! Ask me anything about {fullName}'s background, engineering capabilities, or projects like BankLedger and Nutino.
+              Hi! Ask me anything about {fullName}&apos;s background, engineering capabilities, or projects like BankLedger and Nutino.
             </p>
           </div>
         ) : (
@@ -61,17 +74,21 @@ export function Chat({
                 <span className="text-xs font-semibold uppercase opacity-50 block mb-1">
                   {m.role === "user" ? "You" : "Satabarto's AI Agent"}
                 </span>
-                <p className="whitespace-pre-wrap text-sm leading-relaxed">{m.content}</p>
+                <p className="whitespace-pre-wrap text-sm leading-relaxed">
+                  {m.parts?.map((part, i) => 
+                    part.type === "text" ? <span key={i}>{part.text}</span> : null
+                  )}
+                </p>
               </div>
             </div>
           ))
         )}
-        {isLoading && (
+        {isLoading && messages[messages.length - 1]?.role === "user" && (
           <div className="flex justify-start">
             <div className="max-w-[80%] rounded-xl px-4 py-2 bg-muted text-foreground flex items-center space-x-2">
               <span className="w-2 h-2 rounded-full bg-foreground/30 animate-pulse"></span>
-              <span className="w-2 h-2 rounded-full bg-foreground/30 animate-pulse delay-75"></span>
-              <span className="w-2 h-2 rounded-full bg-foreground/30 animate-pulse delay-150"></span>
+              <span className="w-2 h-2 rounded-full bg-foreground/30 animate-pulse" style={{animationDelay: "75ms"}}></span>
+              <span className="w-2 h-2 rounded-full bg-foreground/30 animate-pulse" style={{animationDelay: "150ms"}}></span>
             </div>
           </div>
         )}
@@ -83,14 +100,14 @@ export function Chat({
         <div className="relative">
           <input
             className="w-full bg-background border border-border text-foreground rounded-full px-4 py-3 pr-12 focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm"
-            value={input}
+            value={inputValue}
             placeholder="Ask about my systems expertise..."
-            onChange={handleInputChange}
+            onChange={(e) => setInputValue(e.target.value)}
             disabled={isLoading}
           />
           <button 
             type="submit" 
-            disabled={isLoading || !input.trim()}
+            disabled={isLoading || !inputValue.trim()}
             className="absolute right-2 top-2 p-1 bg-primary text-primary-foreground rounded-full disabled:opacity-50 hover:bg-primary/90 transition-colors"
           >
             <Send className="w-4 h-4 m-1" />

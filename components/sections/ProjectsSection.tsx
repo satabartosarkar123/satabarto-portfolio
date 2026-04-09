@@ -35,7 +35,7 @@ export async function ProjectsSection() {
         </div>
 
         <div className="flex flex-col gap-12">
-          {projects.map((project) => (
+          {projects.map((project: { _id: string; title?: string | null; metric?: string | null; problem?: string | null; challenges?: string | null; techStack?: string[] | null; githubUrl?: string | null }) => (
             <div
               key={project._id}
               className="bg-card border border-border rounded-xl p-6 md:p-10 hover:border-primary/50 transition-colors"

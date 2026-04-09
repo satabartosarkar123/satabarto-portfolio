@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { SanityLive } from "@/sanity/lib/live";
 import "../globals.css";
 import { draftMode } from "next/headers";
-import Script from "next/script";
+
 import { VisualEditing } from "next-sanity/visual-editing";
 import { AppSidebar } from "@/components/app-sidebar";
 import { ModeToggle } from "@/components/DarkModeToggle";
