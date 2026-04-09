@@ -1,0 +1,28 @@
+{"_type":"skill","_id":"skill-java","name":"Java","category":"Programming Languages"}
+{"_type":"skill","_id":"skill-python","name":"Python","category":"Programming Languages"}
+{"_type":"skill","_id":"skill-js","name":"JavaScript","category":"Programming Languages"}
+{"_type":"skill","_id":"skill-sql","name":"SQL","category":"Programming Languages"}
+{"_type":"skill","_id":"skill-c","name":"C","category":"Programming Languages"}
+{"_type":"skill","_id":"skill-html","name":"HTML","category":"Web Technologies"}
+{"_type":"skill","_id":"skill-css","name":"CSS","category":"Web Technologies"}
+{"_type":"skill","_id":"skill-react","name":"React.js","category":"Web Technologies"}
+{"_type":"skill","_id":"skill-nodejs","name":"Node.js","category":"Backend"}
+{"_type":"skill","_id":"skill-express","name":"Express.js","category":"Backend"}
+{"_type":"skill","_id":"skill-flask","name":"Flask","category":"Backend"}
+{"_type":"skill","_id":"skill-django","name":"Django","category":"Backend"}
+{"_type":"skill","_id":"skill-rest","name":"REST APIs","category":"Backend"}
+{"_type":"skill","_id":"skill-pytorch","name":"PyTorch","category":"ML / Data Science"}
+{"_type":"skill","_id":"skill-sklearn","name":"scikit-learn","category":"ML / Data Science"}
+{"_type":"skill","_id":"skill-pandas","name":"pandas","category":"ML / Data Science"}
+{"_type":"skill","_id":"skill-numpy","name":"NumPy","category":"ML / Data Science"}
+{"_type":"skill","_id":"skill-matplotlib","name":"Matplotlib","category":"ML / Data Science"}
+{"_type":"skill","_id":"skill-mongodb","name":"MongoDB","category":"Databases"}
+{"_type":"skill","_id":"skill-postgresql","name":"PostgreSQL","category":"Databases"}
+{"_type":"skill","_id":"skill-git","name":"Git","category":"Tools"}
+{"_type":"skill","_id":"skill-github","name":"GitHub","category":"Tools"}
+{"_type":"skill","_id":"skill-firebase","name":"Firebase","category":"Tools"}
+{"_type":"skill","_id":"skill-postman","name":"Postman","category":"Tools"}
+{"_type":"skill","_id":"skill-langchain","name":"LangChain","category":"Agentic AI / APIs"}
+{"_type":"skill","_id":"skill-openai","name":"OpenAI API","category":"Agentic AI / APIs"}
+{"_type":"skill","_id":"skill-gemini","name":"Gemini API","category":"Agentic AI / APIs"}
+{"_type":"skill","_id":"skill-mistral","name":"Mistral API","category":"Agentic AI / APIs"}
