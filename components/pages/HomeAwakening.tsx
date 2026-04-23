@@ -99,7 +99,7 @@ export function HomeAwakening() {
           >
             <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden profile-glow">
               <Image
-                src="/images/satabarto-hero.png"
+                src="/images/satabarto-hero-latest.jpg"
                 alt="Satabarto Sarkar"
                 fill
                 className="object-cover"
