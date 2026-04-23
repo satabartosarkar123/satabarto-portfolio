@@ -147,7 +147,7 @@ export async function HeroSection() {
           <div className="flex justify-center lg:justify-end">
             <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden profile-glow">
               <Image
-                src="/images/satabarto-hero-final.jpg"
+                src="/images/satabarto-hero-latest.jpg"
                 alt="Satabarto Sarkar"
                 fill
                 className="object-cover"
