@@ -11,7 +11,12 @@ export async function ExperienceSection() {
         "Implemented competitor analysis using 20+ keywords and 4–5 overlap metrics.",
         "Built As-Is SEO diagnostics covering 25+ checks, including Core Web Vitals.",
       ],
-      tech: ["OAuth 2.0", "Google Analytics 4", "Google Search Console", "Python"],
+      tech: [
+        "OAuth 2.0",
+        "Google Analytics 4",
+        "Google Search Console",
+        "Python",
+      ],
     },
     {
       role: "Research Intern",
@@ -50,7 +55,9 @@ export async function ExperienceSection() {
               <div className="stardust-hover rounded-xl p-6 md:p-8 bg-card/50 backdrop-blur-sm">
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
                   <div>
-                    <h3 className="text-xl md:text-2xl font-semibold text-foreground">{exp.role}</h3>
+                    <h3 className="text-xl md:text-2xl font-semibold text-foreground">
+                      {exp.role}
+                    </h3>
                     <p className="text-primary font-medium">{exp.company}</p>
                   </div>
                   <span className="text-xs font-mono text-muted-foreground hud-border px-3 py-1 rounded-full w-fit">
@@ -60,7 +67,10 @@ export async function ExperienceSection() {
 
                 <ul className="space-y-2 mb-5">
                   {exp.bullets.map((bullet, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <li
+                      key={idx}
+                      className="flex items-start gap-3 text-sm text-muted-foreground"
+                    >
                       <span className="text-primary mt-1.5 text-[8px]">▸</span>
                       <span>{bullet}</span>
                     </li>
@@ -69,7 +79,10 @@ export async function ExperienceSection() {
 
                 <div className="flex flex-wrap gap-2">
                   {exp.tech.map((t) => (
-                    <span key={t} className="skill-tag px-2.5 py-1 rounded text-[10px] font-mono">
+                    <span
+                      key={t}
+                      className="skill-tag px-2.5 py-1 rounded text-[10px] font-mono"
+                    >
                       {t}
                     </span>
                   ))}

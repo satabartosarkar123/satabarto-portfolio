@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
-import { PageTransition } from "@/components/cosmos/PageTransition";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { PageTransition } from "@/components/cosmos/PageTransition";
+import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
 
 export function ContactSignal() {
   return (
@@ -35,7 +35,7 @@ export function ContactSignal() {
               {
                 label: "LinkedIn",
                 value: "/in/satabarto-sarkar",
-                href: "https://linkedin.com/in/satabarto-sarkar",
+                href: "https://www.linkedin.com/in/satabarto-sarkar-5a5467331/",
                 icon: "↗",
               },
               {
@@ -48,18 +48,30 @@ export function ContactSignal() {
               <ScrollReveal key={channel.label} delay={idx * 0.15}>
                 <Link
                   href={channel.href}
-                  target={channel.href.startsWith("http") ? "_blank" : undefined}
-                  rel={channel.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  target={
+                    channel.href.startsWith("http") ? "_blank" : undefined
+                  }
+                  rel={
+                    channel.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                   className="block stardust-hover rounded-xl p-8 bg-[#0F1F17]/60 backdrop-blur-sm text-center group"
                 >
                   <motion.div
                     className="w-12 h-12 rounded-full bg-[#64FFDA]/8 border border-[#64FFDA]/15 flex items-center justify-center mx-auto mb-4 group-hover:shadow-[0_0_20px_rgba(100,255,218,0.15)] transition-all duration-500"
                     whileHover={{ scale: 1.1 }}
                   >
-                    <span className="text-[#64FFDA] text-lg">{channel.icon}</span>
+                    <span className="text-[#64FFDA] text-lg">
+                      {channel.icon}
+                    </span>
                   </motion.div>
-                  <h3 className="text-xs font-mono text-[#E8F5E9]/80 tracking-wider mb-2">{channel.label}</h3>
-                  <p className="text-[10px] font-mono text-[#81C784]/50 break-all">{channel.value}</p>
+                  <h3 className="text-xs font-mono text-[#E8F5E9]/80 tracking-wider mb-2">
+                    {channel.label}
+                  </h3>
+                  <p className="text-[10px] font-mono text-[#81C784]/50 break-all">
+                    {channel.value}
+                  </p>
                 </Link>
               </ScrollReveal>
             ))}

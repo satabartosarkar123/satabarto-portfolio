@@ -61,9 +61,10 @@ export function ParticleField({ count = 40 }: { count?: number }) {
         p.opacity += (Math.random() - 0.5) * 0.01;
         p.opacity = Math.max(0.05, Math.min(0.6, p.opacity));
 
-        const color = p.hue === 0
-          ? `rgba(100, 255, 218, ${p.opacity})`
-          : `rgba(179, 136, 255, ${p.opacity})`;
+        const color =
+          p.hue === 0
+            ? `rgba(100, 255, 218, ${p.opacity})`
+            : `rgba(179, 136, 255, ${p.opacity})`;
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
@@ -74,9 +75,10 @@ export function ParticleField({ count = 40 }: { count?: number }) {
         if (p.size > 1.2) {
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size * 3, 0, Math.PI * 2);
-          const glowColor = p.hue === 0
-            ? `rgba(100, 255, 218, ${p.opacity * 0.1})`
-            : `rgba(179, 136, 255, ${p.opacity * 0.1})`;
+          const glowColor =
+            p.hue === 0
+              ? `rgba(100, 255, 218, ${p.opacity * 0.1})`
+              : `rgba(179, 136, 255, ${p.opacity * 0.1})`;
           ctx.fillStyle = glowColor;
           ctx.fill();
         }

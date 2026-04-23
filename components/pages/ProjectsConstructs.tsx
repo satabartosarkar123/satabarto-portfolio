@@ -1,15 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
 import { PageTransition } from "@/components/cosmos/PageTransition";
+import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
 
 const projects = [
   {
     title: "BankLedger",
     subtitle: "Financial Backend Engine",
     period: "Mar 2026 – Present",
-    metric: "< 200ms P95 Latency",
     problem:
       "Traditional account management APIs treat financial mutations as simple CRUD — no atomicity guarantees, no audit trails, no protection against duplicate submissions. A single dropped request can cause ledger imbalances worth real money.",
     architecture:
@@ -17,13 +16,12 @@ const projects = [
     challenges:
       "Race conditions under concurrent transfers to the same account. Solved with pessimistic document-level locking and sequential consistency on the hot path. Pagination over the full transaction history uses cursor-based traversal to avoid O(N) offset scans.",
     tech: ["Node.js", "Express.js", "MongoDB", "JWT", "REST API"],
-    github: "https://github.com/satabartosarkar123/BankLedger",
+    github: "https://github.com/satabartosarkar123/backend_ledger",
   },
   {
     title: "Nutino",
     subtitle: "AI-Powered News Intelligence Pipeline",
     period: "Feb 2026 – Present",
-    metric: "1000+ Articles Processed",
     problem:
       "Consuming news at scale requires more than RSS feeds. Users need structured extraction, contextual summarization, and intelligent filtering — not raw article dumps from unreliable third-party APIs.",
     architecture:
@@ -31,7 +29,7 @@ const projects = [
     challenges:
       "Gemini API rate limits under concurrent load. Engineered a bounded-concurrency executor (Promise pool, max 3 parallel) with exponential backoff and circuit-breaker patterns. Implemented server-side caching to reduce redundant LLM calls by 60%.",
     tech: ["Next.js", "Gemini API", "Redis", "Zod", "Tailwind CSS"],
-    github: "https://github.com/satabartosarkar123/01newssum",
+    github: "https://github.com/satabartosarkar123/Nutino",
   },
 ];
 
@@ -64,11 +62,11 @@ export function ProjectsConstructs() {
                         <h2 className="text-2xl md:text-3xl font-bold text-[#E8F5E9] font-mono">
                           {project.title}
                         </h2>
-                        <p className="text-xs text-[#81C784]/60 mt-1">{project.subtitle} · {project.period}</p>
+                        <p className="text-xs text-[#81C784]/60 mt-1">
+                          {project.subtitle} · {project.period}
+                        </p>
                       </div>
-                      <span className="text-[10px] font-mono text-[#64FFDA] px-3 py-1.5 rounded-full border border-[#64FFDA]/15 w-fit">
-                        {project.metric}
-                      </span>
+
                     </div>
                   </div>
 
@@ -80,7 +78,9 @@ export function ProjectsConstructs() {
                         <span className="w-1 h-3 rounded-sm bg-[#64FFDA]/40" />
                         PROBLEM SPACE
                       </h3>
-                      <p className="text-sm text-[#E8F5E9]/70 leading-relaxed">{project.problem}</p>
+                      <p className="text-sm text-[#E8F5E9]/70 leading-relaxed">
+                        {project.problem}
+                      </p>
                     </div>
 
                     {/* Architecture */}
@@ -89,7 +89,9 @@ export function ProjectsConstructs() {
                         <span className="w-1 h-3 rounded-sm bg-[#b388ff]/40" />
                         SYSTEM ARCHITECTURE
                       </h3>
-                      <p className="text-sm text-[#E8F5E9]/70 leading-relaxed">{project.architecture}</p>
+                      <p className="text-sm text-[#E8F5E9]/70 leading-relaxed">
+                        {project.architecture}
+                      </p>
                     </div>
 
                     {/* Challenges */}
@@ -98,14 +100,19 @@ export function ProjectsConstructs() {
                         <span className="w-1 h-3 rounded-sm bg-[#FFD54F]/40" />
                         ENGINEERING CHALLENGES
                       </h3>
-                      <p className="text-sm text-[#E8F5E9]/70 leading-relaxed">{project.challenges}</p>
+                      <p className="text-sm text-[#E8F5E9]/70 leading-relaxed">
+                        {project.challenges}
+                      </p>
                     </div>
 
                     {/* Tech + Link */}
                     <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-[#64FFDA]/8">
                       <div className="flex flex-wrap gap-2">
                         {project.tech.map((t) => (
-                          <span key={t} className="skill-tag px-2.5 py-1 rounded text-[10px] font-mono">
+                          <span
+                            key={t}
+                            className="skill-tag px-2.5 py-1 rounded text-[10px] font-mono"
+                          >
                             {t}
                           </span>
                         ))}

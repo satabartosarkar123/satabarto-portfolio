@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 export async function HeroSection() {
   return (
@@ -9,14 +9,78 @@ export async function HeroSection() {
     >
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="particle" style={{ top: "10%", left: "15%", ["--duration" as string]: "7s", ["--delay" as string]: "0s" }} />
-        <div className="particle" style={{ top: "20%", left: "70%", ["--duration" as string]: "9s", ["--delay" as string]: "1s" }} />
-        <div className="particle" style={{ top: "60%", left: "25%", ["--duration" as string]: "8s", ["--delay" as string]: "2s" }} />
-        <div className="particle" style={{ top: "40%", left: "80%", ["--duration" as string]: "6s", ["--delay" as string]: "0.5s" }} />
-        <div className="particle" style={{ top: "75%", left: "55%", ["--duration" as string]: "10s", ["--delay" as string]: "3s" }} />
-        <div className="particle" style={{ top: "30%", left: "40%", ["--duration" as string]: "7.5s", ["--delay" as string]: "1.5s" }} />
-        <div className="particle" style={{ top: "85%", left: "10%", ["--duration" as string]: "8.5s", ["--delay" as string]: "4s" }} />
-        <div className="particle" style={{ top: "15%", left: "90%", ["--duration" as string]: "6.5s", ["--delay" as string]: "2.5s" }} />
+        <div
+          className="particle"
+          style={{
+            top: "10%",
+            left: "15%",
+            ["--duration" as string]: "7s",
+            ["--delay" as string]: "0s",
+          }}
+        />
+        <div
+          className="particle"
+          style={{
+            top: "20%",
+            left: "70%",
+            ["--duration" as string]: "9s",
+            ["--delay" as string]: "1s",
+          }}
+        />
+        <div
+          className="particle"
+          style={{
+            top: "60%",
+            left: "25%",
+            ["--duration" as string]: "8s",
+            ["--delay" as string]: "2s",
+          }}
+        />
+        <div
+          className="particle"
+          style={{
+            top: "40%",
+            left: "80%",
+            ["--duration" as string]: "6s",
+            ["--delay" as string]: "0.5s",
+          }}
+        />
+        <div
+          className="particle"
+          style={{
+            top: "75%",
+            left: "55%",
+            ["--duration" as string]: "10s",
+            ["--delay" as string]: "3s",
+          }}
+        />
+        <div
+          className="particle"
+          style={{
+            top: "30%",
+            left: "40%",
+            ["--duration" as string]: "7.5s",
+            ["--delay" as string]: "1.5s",
+          }}
+        />
+        <div
+          className="particle"
+          style={{
+            top: "85%",
+            left: "10%",
+            ["--duration" as string]: "8.5s",
+            ["--delay" as string]: "4s",
+          }}
+        />
+        <div
+          className="particle"
+          style={{
+            top: "15%",
+            left: "90%",
+            ["--duration" as string]: "6.5s",
+            ["--delay" as string]: "2.5s",
+          }}
+        />
       </div>
 
       <div className="relative z-10 container mx-auto max-w-6xl">
@@ -29,8 +93,7 @@ export async function HeroSection() {
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#E8F5E9]">
-              Satabarto{" "}
-              <span className="text-[#64FFDA]">Sarkar</span>
+              Satabarto <span className="text-[#64FFDA]">Sarkar</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-[#81C784] font-medium">
@@ -38,8 +101,9 @@ export async function HeroSection() {
             </p>
 
             <p className="text-base text-[#81C784]/80 leading-relaxed max-w-lg">
-              Engineering fault-tolerant backends and intelligent data pipelines. 
-              B.Tech CSE at IEM Kolkata — GPA 9.76/10, Top 5% in Department.
+              Engineering fault-tolerant backends and intelligent data
+              pipelines. B.Tech CSE at IEM Kolkata — GPA 9.76/10, Top 5% in
+              Department.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-4">
@@ -83,7 +147,7 @@ export async function HeroSection() {
           <div className="flex justify-center lg:justify-end">
             <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden profile-glow">
               <Image
-                src="/images/satabarto-hero.png"
+                src="/images/satabarto-hero-new.jpg"
                 alt="Satabarto Sarkar"
                 fill
                 className="object-cover"

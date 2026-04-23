@@ -18,7 +18,18 @@ export async function SkillsSection() {
     {
       title: "ML / Data Science / AI",
       icon: "◈",
-      skills: ["PyTorch", "scikit-learn", "pandas", "NumPy", "Matplotlib", "Seaborn", "LangChain", "OpenAI API", "Gemini API", "Mistral API"],
+      skills: [
+        "PyTorch",
+        "scikit-learn",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn",
+        "LangChain",
+        "OpenAI API",
+        "Gemini API",
+        "Mistral API",
+      ],
     },
     {
       title: "Databases",
@@ -53,7 +64,9 @@ export async function SkillsSection() {
             >
               <div className="flex items-center gap-3 mb-5">
                 <span className="text-lg text-primary">{category.icon}</span>
-                <h3 className="text-lg font-semibold text-foreground">{category.title}</h3>
+                <h3 className="text-lg font-semibold text-foreground">
+                  {category.title}
+                </h3>
               </div>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (

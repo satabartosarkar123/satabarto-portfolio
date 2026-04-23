@@ -31,72 +31,83 @@ export async function ProjectsSection() {
             Projects & Implementations
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Production-grade solutions focusing on data pipelines, backend integrity, and scalable APIs.
+            Production-grade solutions focusing on data pipelines, backend
+            integrity, and scalable APIs.
           </p>
           <div className="section-divider max-w-xs mx-auto mt-6" />
         </div>
 
         <div className="flex flex-col gap-8">
-          {projects.map((project: { _id: string; title?: string | null; metric?: string | null; problem?: string | null; challenges?: string | null; techStack?: string[] | null; githubUrl?: string | null }) => (
-            <div
-              key={project._id}
-              className="stardust-hover rounded-xl p-6 md:p-10 bg-card/50 backdrop-blur-sm"
-            >
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
-                <h3 className="text-2xl md:text-3xl font-bold font-mono text-foreground">
-                  {project.title}
-                </h3>
-                {project.metric && (
-                  <span className="bg-primary/10 text-primary text-sm font-semibold px-4 py-2 rounded-full hud-border">
-                    {project.metric}
-                  </span>
-                )}
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-muted-foreground mb-8 text-sm md:text-base leading-relaxed">
-                <div>
-                  <h4 className="text-foreground font-semibold mb-2 flex items-center text-sm">
-                    <span className="w-1 h-4 mr-2 rounded-sm bg-primary" />
-                    Problem Space
-                  </h4>
-                  <p>{project.problem}</p>
+          {projects.map(
+            (project: {
+              _id: string;
+              title?: string | null;
+              metric?: string | null;
+              problem?: string | null;
+              challenges?: string | null;
+              techStack?: string[] | null;
+              githubUrl?: string | null;
+            }) => (
+              <div
+                key={project._id}
+                className="stardust-hover rounded-xl p-6 md:p-10 bg-card/50 backdrop-blur-sm"
+              >
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+                  <h3 className="text-2xl md:text-3xl font-bold font-mono text-foreground">
+                    {project.title}
+                  </h3>
+                  {project.metric && (
+                    <span className="bg-primary/10 text-primary text-sm font-semibold px-4 py-2 rounded-full hud-border">
+                      {project.metric}
+                    </span>
+                  )}
                 </div>
-                <div>
-                  <h4 className="text-foreground font-semibold mb-2 flex items-center text-sm">
-                    <span className="w-1 h-4 mr-2 rounded-sm bg-[#7c4dff]" />
-                    Challenges & Bottlenecks
-                  </h4>
-                  <p>{project.challenges}</p>
-                </div>
-              </div>
 
-              <div className="flex flex-wrap items-center justify-between gap-6 border-t border-border pt-6">
-                {project.techStack && project.techStack.length > 0 && (
-                  <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech, idx) => (
-                      <span
-                        key={idx}
-                        className="skill-tag text-[10px] font-mono px-3 py-1 rounded"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-muted-foreground mb-8 text-sm md:text-base leading-relaxed">
+                  <div>
+                    <h4 className="text-foreground font-semibold mb-2 flex items-center text-sm">
+                      <span className="w-1 h-4 mr-2 rounded-sm bg-primary" />
+                      Problem Space
+                    </h4>
+                    <p>{project.problem}</p>
                   </div>
-                )}
+                  <div>
+                    <h4 className="text-foreground font-semibold mb-2 flex items-center text-sm">
+                      <span className="w-1 h-4 mr-2 rounded-sm bg-[#7c4dff]" />
+                      Challenges & Bottlenecks
+                    </h4>
+                    <p>{project.challenges}</p>
+                  </div>
+                </div>
 
-                {project.githubUrl && (
-                  <Link
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-mono text-sm px-5 py-2 hud-border hud-border-hover text-primary rounded transition-all duration-300"
-                  >
-                    View Repository ↗
-                  </Link>
-                )}
+                <div className="flex flex-wrap items-center justify-between gap-6 border-t border-border pt-6">
+                  {project.techStack && project.techStack.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                      {project.techStack.map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="skill-tag text-[10px] font-mono px-3 py-1 rounded"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {project.githubUrl && (
+                    <Link
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-sm px-5 py-2 hud-border hud-border-hover text-primary rounded transition-all duration-300"
+                    >
+                      View Repository ↗
+                    </Link>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ),
+          )}
         </div>
       </div>
     </section>

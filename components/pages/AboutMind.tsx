@@ -1,7 +1,7 @@
 "use client";
 
-import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
 import { PageTransition } from "@/components/cosmos/PageTransition";
+import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
 
 export function AboutMind() {
   return (
@@ -24,21 +24,11 @@ export function AboutMind() {
             <ScrollReveal delay={0.1}>
               <div className="stardust-hover rounded-xl p-8 bg-[#0F1F17]/60 backdrop-blur-sm">
                 <p className="text-[#E8F5E9]/80 leading-relaxed text-base">
-                  I architect systems that endure pressure — financial ledgers enforcing atomic consistency 
-                  across double-entry transactions, AI pipelines processing thousands of articles through 
-                  structured concurrent stages, and SEO engines crawling production web properties against 
-                  25+ diagnostic parameters.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <div className="stardust-hover rounded-xl p-8 bg-[#0F1F17]/60 backdrop-blur-sm">
-                <p className="text-[#E8F5E9]/80 leading-relaxed text-base">
-                  My engineering philosophy: <span className="text-[#64FFDA]">every system should be auditable, 
-                  every failure recoverable, every operation idempotent.</span> This thinking was shaped by 
-                  building BankLedger — a financial backend where race conditions mean lost money — and Nutino, 
-                  where a single malformed API response can cascade through an entire summarization pipeline.
+                  I worked on systems that include financial ledgers enforcing
+                  atomic consistency across double-entry transactions, AI
+                  pipelines processing articles through structured concurrent
+                  stages, and SEO engines crawling web properties against
+                  diagnostic parameters.
                 </p>
               </div>
             </ScrollReveal>
@@ -46,11 +36,17 @@ export function AboutMind() {
             <ScrollReveal delay={0.3}>
               <div className="stardust-hover rounded-xl p-8 bg-[#0F1F17]/60 backdrop-blur-sm">
                 <p className="text-[#E8F5E9]/80 leading-relaxed text-base">
-                  Currently in my third year at the Institute of Engineering and Management, Kolkata, 
-                  carrying a <span className="text-[#64FFDA]">9.76 CGPA</span> and placed in the 
-                  <span className="text-[#64FFDA]"> top 5% of the department</span>. I lead the Industry Team 
-                  at IEM&apos;s Centre of Excellence in Generative AI and have served as a core ML member at 
-                  Google Developer Group on campus.
+                  Currently in my third year at the Institute of Engineering and
+                  Management, Kolkata, carrying a{" "}
+                  <span className="text-[#64FFDA]">9.78 CGPA</span> and placed
+                  in the
+                  <span className="text-[#64FFDA]">
+                    {" "}
+                    top 5% of the department
+                  </span>
+                  . I lead the Industry Team at IEM&apos;s Centre of Excellence
+                  in Generative AI and have served as a core ML member at Google
+                  Developer Group on campus.
                 </p>
               </div>
             </ScrollReveal>
@@ -69,8 +65,12 @@ export function AboutMind() {
                   key={stat.label}
                   className="text-center stardust-hover rounded-xl p-5 bg-[#0F1F17]/40"
                 >
-                  <div className="text-2xl font-bold text-[#64FFDA] mb-1">{stat.value}</div>
-                  <div className="text-[10px] font-mono text-[#81C784]/50 tracking-wider">{stat.label}</div>
+                  <div className="text-2xl font-bold text-[#64FFDA] mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-[10px] font-mono text-[#81C784]/50 tracking-wider">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -109,14 +109,20 @@ export function AboutMind() {
                     className="flex flex-col md:flex-row md:items-center justify-between p-5 rounded-lg border border-[#64FFDA]/8 hover:border-[#64FFDA]/20 transition-all duration-500"
                   >
                     <div>
-                      <p className="text-sm font-medium text-[#E8F5E9]">{edu.degree}</p>
-                      <p className="text-xs text-[#81C784]/60 mt-0.5">{edu.place}</p>
+                      <p className="text-sm font-medium text-[#E8F5E9]">
+                        {edu.degree}
+                      </p>
+                      <p className="text-xs text-[#81C784]/60 mt-0.5">
+                        {edu.place}
+                      </p>
                     </div>
                     <div className="flex items-center gap-4 mt-2 md:mt-0">
                       <span className="text-[10px] font-mono text-[#64FFDA]/60 px-2 py-1 rounded-full border border-[#64FFDA]/10">
                         {edu.note}
                       </span>
-                      <span className="text-[10px] font-mono text-[#81C784]/40">{edu.period}</span>
+                      <span className="text-[10px] font-mono text-[#81C784]/40">
+                        {edu.period}
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -133,8 +139,15 @@ export function AboutMind() {
                   Credentials
                 </h2>
                 <div className="space-y-3">
-                  {["McKinsey Forward Program", "Google Business Intelligence", "Cisco Cybersecurity"].map((cert) => (
-                    <div key={cert} className="flex items-center gap-3 text-sm text-[#E8F5E9]/70">
+                  {[
+                    "McKinsey Forward Program",
+                    "Google Business Intelligence",
+                    "Cisco Cybersecurity",
+                  ].map((cert) => (
+                    <div
+                      key={cert}
+                      className="flex items-center gap-3 text-sm text-[#E8F5E9]/70"
+                    >
                       <span className="text-[#64FFDA] text-[8px]">◈</span>
                       {cert}
                     </div>
@@ -149,11 +162,15 @@ export function AboutMind() {
                 <div className="space-y-3">
                   <div className="text-sm text-[#E8F5E9]/70">
                     <p>CoE in Generative AI, IEM</p>
-                    <p className="text-[10px] text-[#81C784]/50 mt-0.5">Industry Team Lead</p>
+                    <p className="text-[10px] text-[#81C784]/50 mt-0.5">
+                      Industry Team Lead
+                    </p>
                   </div>
                   <div className="text-sm text-[#E8F5E9]/70">
                     <p>GDG On Campus, IEM</p>
-                    <p className="text-[10px] text-[#81C784]/50 mt-0.5">Core Member, ML Team</p>
+                    <p className="text-[10px] text-[#81C784]/50 mt-0.5">
+                      Core Member, ML Team
+                    </p>
                   </div>
                 </div>
               </div>

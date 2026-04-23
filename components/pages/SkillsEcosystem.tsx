@@ -1,8 +1,8 @@
 "use client";
 
-import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
-import { PageTransition } from "@/components/cosmos/PageTransition";
 import { motion } from "framer-motion";
+import { PageTransition } from "@/components/cosmos/PageTransition";
+import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
 
 const clusters = [
   {
@@ -18,7 +18,16 @@ const clusters = [
   {
     title: "Intelligence & ML",
     icon: "◈",
-    organisms: ["PyTorch", "scikit-learn", "pandas", "NumPy", "LangChain", "Gemini API", "Mistral API", "OpenAI API"],
+    organisms: [
+      "PyTorch",
+      "scikit-learn",
+      "pandas",
+      "NumPy",
+      "LangChain",
+      "Gemini API",
+      "Mistral API",
+      "OpenAI API",
+    ],
   },
   {
     title: "Web & Interface",
@@ -50,7 +59,8 @@ export function SkillsEcosystem() {
               Skills
             </h1>
             <p className="text-sm text-[#81C784]/60 max-w-lg mb-2">
-              Organisms in a living technical ecosystem. Each cluster represents a domain of competence.
+              Organisms in a living technical ecosystem. Each cluster represents
+              a domain of competence.
             </p>
             <div className="h-[1px] w-24 bg-gradient-to-r from-[#64FFDA]/40 to-transparent mb-16" />
           </ScrollReveal>
@@ -60,8 +70,12 @@ export function SkillsEcosystem() {
               <ScrollReveal key={cluster.title} delay={idx * 0.1}>
                 <div className="stardust-hover rounded-xl p-6 bg-[#0F1F17]/60 backdrop-blur-sm h-full">
                   <div className="flex items-center gap-3 mb-5">
-                    <span className="text-lg text-[#64FFDA]">{cluster.icon}</span>
-                    <h2 className="text-sm font-semibold text-[#E8F5E9] tracking-wide">{cluster.title}</h2>
+                    <span className="text-lg text-[#64FFDA]">
+                      {cluster.icon}
+                    </span>
+                    <h2 className="text-sm font-semibold text-[#E8F5E9] tracking-wide">
+                      {cluster.title}
+                    </h2>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {cluster.organisms.map((skill, i) => (
@@ -94,10 +108,15 @@ export function SkillsEcosystem() {
               </h2>
               <div className="flex flex-wrap gap-2">
                 {[
-                  "Data Structures & Algorithms", "Operating Systems", "DBMS",
-                  "Machine Learning", "Neural Networks & Deep Learning",
-                  "Design & Analysis of Algorithms", "Quantum Computing",
-                  "Computer Networks", "Software Engineering",
+                  "Data Structures & Algorithms",
+                  "Operating Systems",
+                  "DBMS",
+                  "Machine Learning",
+                  "Neural Networks & Deep Learning",
+                  "Design & Analysis of Algorithms",
+                  "Quantum Computing",
+                  "Computer Networks",
+                  "Software Engineering",
                 ].map((course) => (
                   <span
                     key={course}

@@ -6,13 +6,13 @@ import "../globals.css";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
 import { AppSidebar } from "@/components/app-sidebar";
+import { BreathingBackground } from "@/components/cosmos/BreathingBackground";
+import { CosmicNav } from "@/components/cosmos/CosmicNav";
+import { ParticleField } from "@/components/cosmos/ParticleField";
 import { DisableDraftMode } from "@/components/DisableDraftMode";
 import SidebarToggle from "@/components/SidebarToggle";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
-import { BreathingBackground } from "@/components/cosmos/BreathingBackground";
-import { ParticleField } from "@/components/cosmos/ParticleField";
-import { CosmicNav } from "@/components/cosmos/CosmicNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

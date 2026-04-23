@@ -1,8 +1,8 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
 
 export function HomeAwakening() {
@@ -27,7 +27,11 @@ export function HomeAwakening() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{
+                duration: 1.2,
+                delay: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#E8F5E9]"
             >
               Satabarto
@@ -42,10 +46,10 @@ export function HomeAwakening() {
               transition={{ duration: 1.5, delay: 1.2 }}
               className="text-lg md:text-xl text-[#81C784]/80 font-light leading-relaxed max-w-lg"
             >
-              Designing fault-tolerant systems and intelligent pipelines.
+              Designing systems and intelligent pipelines.
               <br />
               <span className="text-[#64FFDA]/60 text-sm font-mono">
-                B.Tech CSE · IEM Kolkata · CGPA 9.76
+                B.Tech CSE · IEM Kolkata · CGPA 9.78
               </span>
             </motion.p>
 
@@ -86,7 +90,11 @@ export function HomeAwakening() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{
+              duration: 1.5,
+              delay: 0.8,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
             className="flex justify-center lg:justify-end"
           >
             <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden profile-glow">

@@ -35,9 +35,10 @@ export function CosmicNav() {
                 key={route.href}
                 href={route.href}
                 className={`relative px-4 py-2 text-xs font-mono tracking-wider transition-all duration-500 rounded-full
-                  ${isActive
-                    ? "text-[#64FFDA] bg-[#64FFDA]/8"
-                    : "text-[#81C784]/60 hover:text-[#E8F5E9] hover:bg-[#E8F5E9]/5"
+                  ${
+                    isActive
+                      ? "text-[#64FFDA] bg-[#64FFDA]/8"
+                      : "text-[#81C784]/60 hover:text-[#E8F5E9] hover:bg-[#E8F5E9]/5"
                   }
                 `}
               >

@@ -6,9 +6,13 @@ export async function EducationSection() {
       period: "Aug 2023 – May 2027",
       highlights: ["Ranked Top 5% in Department", "Cumulative GPA: 9.76 / 10"],
       coursework: [
-        "Data Structures & Algorithms", "Operating Systems", "DBMS",
-        "Machine Learning", "Neural Networks & Deep Learning",
-        "Design & Analysis of Algorithms", "Quantum Computing",
+        "Data Structures & Algorithms",
+        "Operating Systems",
+        "DBMS",
+        "Machine Learning",
+        "Neural Networks & Deep Learning",
+        "Design & Analysis of Algorithms",
+        "Quantum Computing",
       ],
     },
     {
@@ -50,8 +54,12 @@ export async function EducationSection() {
               <div className="p-6 md:p-8">
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-foreground">{edu.degree}</h3>
-                    <p className="text-primary font-medium mt-1">{edu.institution}</p>
+                    <h3 className="text-xl font-bold text-foreground">
+                      {edu.degree}
+                    </h3>
+                    <p className="text-primary font-medium mt-1">
+                      {edu.institution}
+                    </p>
                   </div>
                   <span className="text-xs font-mono text-muted-foreground hud-border px-3 py-1 rounded-full w-fit shrink-0">
                     {edu.period}
@@ -73,10 +81,15 @@ export async function EducationSection() {
 
                 {edu.coursework.length > 0 && (
                   <div className="mt-4 pt-4 border-t border-border">
-                    <p className="text-xs font-mono text-muted-foreground mb-3 tracking-wider">KEY COURSEWORK</p>
+                    <p className="text-xs font-mono text-muted-foreground mb-3 tracking-wider">
+                      KEY COURSEWORK
+                    </p>
                     <div className="flex flex-wrap gap-2">
                       {edu.coursework.map((c) => (
-                        <span key={c} className="skill-tag px-2.5 py-1 rounded text-[10px] font-mono">
+                        <span
+                          key={c}
+                          className="skill-tag px-2.5 py-1 rounded text-[10px] font-mono"
+                        >
                           {c}
                         </span>
                       ))}

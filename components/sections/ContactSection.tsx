@@ -10,7 +10,7 @@ export async function ContactSection() {
           </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Open to internships, research collaborations, and engineering roles. 
+            Open to internships, research collaborations, and engineering roles.
             Let&apos;s build something impactful.
           </p>
           <div className="section-divider max-w-xs mx-auto mt-6" />
@@ -25,7 +25,9 @@ export async function ContactSection() {
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:glow-shadow transition-all">
               <span className="text-primary text-xl">✉</span>
             </div>
-            <h3 className="text-sm font-semibold text-foreground mb-1">Email</h3>
+            <h3 className="text-sm font-semibold text-foreground mb-1">
+              Email
+            </h3>
             <p className="text-xs text-muted-foreground font-mono break-all">
               satabartosarkar005@gmail.com
             </p>
@@ -41,7 +43,9 @@ export async function ContactSection() {
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:glow-shadow transition-all">
               <span className="text-primary text-xl">↗</span>
             </div>
-            <h3 className="text-sm font-semibold text-foreground mb-1">LinkedIn</h3>
+            <h3 className="text-sm font-semibold text-foreground mb-1">
+              LinkedIn
+            </h3>
             <p className="text-xs text-muted-foreground font-mono">
               /in/satabarto-sarkar
             </p>
@@ -57,7 +61,9 @@ export async function ContactSection() {
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:glow-shadow transition-all">
               <span className="text-primary text-xl">⌘</span>
             </div>
-            <h3 className="text-sm font-semibold text-foreground mb-1">GitHub</h3>
+            <h3 className="text-sm font-semibold text-foreground mb-1">
+              GitHub
+            </h3>
             <p className="text-xs text-muted-foreground font-mono">
               /satabartosarkar123
             </p>

@@ -53,9 +53,13 @@ export async function CertificationsSection() {
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <span className="text-primary text-lg">◈</span>
               </div>
-              <h3 className="text-base font-semibold text-foreground mb-1">{cert.name}</h3>
+              <h3 className="text-base font-semibold text-foreground mb-1">
+                {cert.name}
+              </h3>
               <p className="text-sm text-primary font-medium">{cert.issuer}</p>
-              <p className="text-xs text-muted-foreground font-mono mt-2">{cert.year}</p>
+              <p className="text-xs text-muted-foreground font-mono mt-2">
+                {cert.year}
+              </p>
             </div>
           ))}
         </div>
@@ -70,7 +74,9 @@ export async function CertificationsSection() {
               <div key={s.name} className="flex items-start gap-3">
                 <span className="text-primary mt-1 text-[8px]">▸</span>
                 <div>
-                  <p className="text-sm font-medium text-foreground">{s.name}</p>
+                  <p className="text-sm font-medium text-foreground">
+                    {s.name}
+                  </p>
                   <p className="text-xs text-muted-foreground">{s.role}</p>
                 </div>
               </div>

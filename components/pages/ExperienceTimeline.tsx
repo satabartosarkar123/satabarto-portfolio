@@ -1,14 +1,15 @@
 "use client";
 
-import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
 import { PageTransition } from "@/components/cosmos/PageTransition";
+import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
 
 const experiences = [
   {
     role: "SWE Intern — 4sight Platform",
     company: "Quantyra Analytics",
     period: "Nov 2025 – Jan 2026",
-    description: "Designed and implemented backend modules for an enterprise SEO automation platform.",
+    description:
+      "Designed and implemented backend modules for an enterprise SEO automation platform.",
     bullets: [
       "Engineered a multi-dimensional analytics pipeline processing 20+ KPIs across Google Analytics 4 and Google Search Console, extracting actionable intelligence from raw API payloads.",
       "Architected OAuth 2.0 lifecycle management for 2 Google APIs — implementing token refresh chains, validation middleware, and expiry-aware session handling.",
@@ -22,7 +23,8 @@ const experiences = [
     role: "Research Intern",
     company: "IEEE Student Internship Program",
     period: "Jun 2025 – Aug 2025",
-    description: "Applied deep learning to biomedical signal processing for seizure detection.",
+    description:
+      "Applied deep learning to biomedical signal processing for seizure detection.",
     bullets: [
       "Developed EEG seizure detection pipeline: discrete wavelet transform preprocessing, signal augmentation, and dual-architecture evaluation (1D-CNN, CNN+LSTM hybrid).",
       "Established rigorous evaluation protocol using k-fold cross-validation, tracking accuracy, macro-F1, and inference latency across ML and DL baselines.",
@@ -65,20 +67,31 @@ export function ExperienceTimeline() {
                     <div className="stardust-hover rounded-xl bg-[#0F1F17]/60 backdrop-blur-sm p-6 md:p-8">
                       <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-3">
                         <div>
-                          <h2 className="text-xl font-semibold text-[#E8F5E9]">{exp.role}</h2>
-                          <p className="text-sm text-[#64FFDA]/80 font-medium">{exp.company}</p>
+                          <h2 className="text-xl font-semibold text-[#E8F5E9]">
+                            {exp.role}
+                          </h2>
+                          <p className="text-sm text-[#64FFDA]/80 font-medium">
+                            {exp.company}
+                          </p>
                         </div>
                         <span className="text-[10px] font-mono text-[#81C784]/50 border border-[#64FFDA]/10 px-3 py-1 rounded-full w-fit">
                           {exp.period}
                         </span>
                       </div>
 
-                      <p className="text-xs text-[#81C784]/60 mb-5 italic">{exp.description}</p>
+                      <p className="text-xs text-[#81C784]/60 mb-5 italic">
+                        {exp.description}
+                      </p>
 
                       <ul className="space-y-3 mb-5">
                         {exp.bullets.map((bullet, i) => (
-                          <li key={i} className="flex items-start gap-3 text-sm text-[#E8F5E9]/70 leading-relaxed">
-                            <span className="text-[#64FFDA] mt-1.5 text-[6px]">●</span>
+                          <li
+                            key={i}
+                            className="flex items-start gap-3 text-sm text-[#E8F5E9]/70 leading-relaxed"
+                          >
+                            <span className="text-[#64FFDA] mt-1.5 text-[6px]">
+                              ●
+                            </span>
                             <span>{bullet}</span>
                           </li>
                         ))}
@@ -86,7 +99,10 @@ export function ExperienceTimeline() {
 
                       <div className="flex flex-wrap gap-2 pt-4 border-t border-[#64FFDA]/8">
                         {exp.tech.map((t) => (
-                          <span key={t} className="skill-tag px-2.5 py-1 rounded text-[10px] font-mono">
+                          <span
+                            key={t}
+                            className="skill-tag px-2.5 py-1 rounded text-[10px] font-mono"
+                          >
                             {t}
                           </span>
                         ))}
