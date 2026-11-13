@@ -23,6 +23,8 @@ function GoogleScholarIcon({
 }) {
   return (
     <svg
+      width={12}
+      height={12}
       viewBox="0 0 24 24"
       fill="currentColor"
       className={className}
@@ -51,11 +53,11 @@ function MentorAvatar({
     );
   }
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
+    <Image
       src={src}
       alt={alt}
-      referrerPolicy="no-referrer"
+      width={64}
+      height={64}
       onError={() => setFailed(true)}
       className="w-16 h-16 rounded-full object-cover border-2 border-[#60A5FA]/40 shadow-[0_0_20px_rgba(96,165,250,0.18)]"
     />
@@ -268,7 +270,7 @@ export function HomeAwakening() {
             <div className="rounded-xl p-5 bg-[#101624]/90 border border-white/10 hover:border-[#60A5FA]/40 transition-colors flex gap-5 items-start">
               <div className="flex flex-col items-center gap-2 shrink-0">
                 <MentorAvatar
-                  src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=pQ6C8YAAAAAJ"
+                  src="/images/mentors/sandip-chakraborty.jpg"
                   alt="Sandip Chakraborty"
                   initials="SC"
                 />
@@ -315,7 +317,7 @@ export function HomeAwakening() {
             <div className="rounded-xl p-5 bg-[#101624]/90 border border-white/10 hover:border-[#818CF8]/40 transition-colors flex gap-5 items-start">
               <div className="flex flex-col items-center gap-2 shrink-0">
                 <MentorAvatar
-                  src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=DYqUKZMAAAAJ"
+                  src="/images/mentors/prithwineel-paul.jpg"
                   alt="Dr. Prithwineel Paul"
                   initials="PP"
                 />
@@ -379,7 +381,7 @@ export function HomeAwakening() {
             <div className="rounded-xl p-5 bg-[#101624]/90 border border-white/10 hover:border-[#38BDF8]/40 transition-colors flex gap-4 items-start">
               <div className="flex flex-col items-center gap-2 shrink-0">
                 <MentorAvatar
-                  src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=hc5NaiEAAAAJ"
+                  src="/images/mentors/d-sobya.jpg"
                   alt="Dr. D. Sobya"
                   initials="DS"
                 />

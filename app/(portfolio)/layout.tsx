@@ -1,4 +1,3 @@
-import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SanityLive } from "@/sanity/lib/live";
@@ -51,45 +50,43 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#080B12] text-[#F1F5F9]`}
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#080B12] text-[#F1F5F9]`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {/* Background */}
-            <BreathingBackground />
+          {/* Background */}
+          <BreathingBackground />
 
-            {/* Navigation */}
-            <CosmicNav />
-            <VisitorTracker />
+          {/* Navigation */}
+          <CosmicNav />
+          <VisitorTracker />
 
-            {/* Content */}
-            <SidebarProvider defaultOpen={false}>
-              <SidebarInset className="">
-                <main className="relative z-10 pt-16">{children}</main>
-              </SidebarInset>
+          {/* Content */}
+          <SidebarProvider defaultOpen={false}>
+            <SidebarInset className="">
+              <main className="relative z-10 pt-16">{children}</main>
+            </SidebarInset>
 
-              <AppSidebar side="right" />
-              <SidebarToggle />
-            </SidebarProvider>
+            <AppSidebar side="right" />
+            <SidebarToggle />
+          </SidebarProvider>
 
-            {/* Sanity */}
-            <SanityLive />
-            {(await draftMode()).isEnabled && (
-              <>
-                <VisualEditing />
-                <DisableDraftMode />
-              </>
-            )}
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+          {/* Sanity */}
+          <SanityLive />
+          {(await draftMode()).isEnabled && (
+            <>
+              <VisualEditing />
+              <DisableDraftMode />
+            </>
+          )}
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
