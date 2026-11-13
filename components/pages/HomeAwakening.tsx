@@ -231,6 +231,129 @@ export function HomeAwakening() {
           </div>
         </ScrollReveal>
 
+        {/* Research Supervision & Mentorship */}
+        <ScrollReveal delay={0.15}>
+          <div className="mb-14">
+            <div className="mb-5">
+              <p className="text-[11px] font-mono text-[#60A5FA] uppercase tracking-widest mb-1">
+                Research Supervision &amp; Mentorship
+              </p>
+              <h2 className="text-xl font-bold text-[#F8FAFC]">Advised By</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {/* Advisor 1: Sandip Chakraborty */}
+              <div className="rounded-xl p-6 bg-[#101624]/85 border border-white/10 hover:border-[#60A5FA]/35 transition-colors flex flex-col justify-between">
+                <div>
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <div>
+                      <h3 className="text-base font-semibold text-[#F8FAFC]">
+                        Sandip Chakraborty
+                      </h3>
+                      <p className="text-xs font-mono text-[#60A5FA] mt-0.5">
+                        IIT Kharagpur · Ubiquitous Network Lab
+                      </p>
+                    </div>
+                    <span className="text-[10px] font-mono text-[#94A3B8] px-2.5 py-1 rounded bg-white/[0.04] border border-white/10 shrink-0">
+                      May – Jul 2026
+                    </span>
+                  </div>
+
+                  <p className="text-xs text-[#CBD5E1] leading-relaxed mt-3 mb-4">
+                    Supervised my Research Internship at the Ubiquitous Network
+                    Lab, IIT Kharagpur — building a multithreaded automated 5G
+                    QoE measurement framework on Jetson Nano and Android
+                    devices, decoupling Appium UI automation from ADB logging
+                    and extracting raw baseband metrics via Magisk/root shell
+                    scripts.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-white/10 text-xs font-mono">
+                  <a
+                    href="https://scholar.google.com/citations?hl=en&user=pQ6C8YAAAAAJ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[#93C5FD] hover:underline"
+                  >
+                    Google Scholar <ExternalLink className="w-3 h-3" />
+                  </a>
+                  <Link
+                    href="/experience"
+                    className="inline-flex items-center gap-1 text-[#60A5FA] hover:underline"
+                  >
+                    Experience <ArrowRight className="w-3 h-3" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Advisor 2: Dr. Prithwineel Paul */}
+              <div className="rounded-xl p-6 bg-[#101624]/85 border border-white/10 hover:border-[#818CF8]/35 transition-colors flex flex-col justify-between">
+                <div>
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <div>
+                      <h3 className="text-base font-semibold text-[#F8FAFC]">
+                        Dr. Prithwineel Paul
+                      </h3>
+                      <p className="text-xs font-mono text-[#818CF8] mt-0.5">
+                        Research Advisor · Neuro-Symbolic, GNNs &amp; SNP
+                      </p>
+                    </div>
+                    <span className="text-[10px] font-mono text-[#94A3B8] px-2.5 py-1 rounded bg-white/[0.04] border border-white/10 shrink-0">
+                      2025 – Present
+                    </span>
+                  </div>
+
+                  <p className="text-xs text-[#CBD5E1] leading-relaxed mt-3 mb-4">
+                    Advisor &amp; co-author across symbolic rule learnability in
+                    GNNs, event-driven Spiking Neural P networks, Takagi–Sugeno
+                    neuro-fuzzy forecasting, certified image authentication, and
+                    program symmetry in concept grounding.
+                  </p>
+                </div>
+
+                <div className="space-y-3 pt-4 border-t border-white/10">
+                  <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-mono">
+                    <span className="text-[#94A3B8] mr-1">Papers:</span>
+                    {[
+                      { code: "W1", id: "sarkar2026pricing" },
+                      { code: "J2", id: "j2-rules-gnns" },
+                      { code: "J3", id: "j3-fuzzy-lstm-snp" },
+                      { code: "J5", id: "j5-program-symmetry" },
+                      { code: "W2", id: "w2-sparsity-free" },
+                      { code: "W3", id: "w3-accept-defer-flag" },
+                    ].map((ref) => (
+                      <Link
+                        key={ref.code}
+                        href={`/publications#${ref.id}`}
+                        className="px-2 py-0.5 rounded bg-[#818CF8]/15 text-[#A5B4FC] border border-[#818CF8]/25 hover:bg-[#818CF8]/30 transition-colors"
+                      >
+                        [{ref.code}]
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap items-center gap-3 text-xs font-mono">
+                    <a
+                      href="https://scholar.google.com/citations?hl=en&user=DYqUKZMAAAAJ&view_op=list_works&sortby=pubdate"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[#A5B4FC] hover:underline"
+                    >
+                      Google Scholar <ExternalLink className="w-3 h-3" />
+                    </a>
+                    <Link
+                      href="/publications#sarkar2026pricing"
+                      className="inline-flex items-center gap-1 text-[#60A5FA] hover:underline"
+                    >
+                      Publications <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+
         {/* Accepted Publications Preview */}
         <ScrollReveal delay={0.2}>
           <div className="rounded-2xl border border-white/10 bg-[#101624]/85 p-6 md:p-8 backdrop-blur-sm">

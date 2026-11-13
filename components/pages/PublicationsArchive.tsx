@@ -29,7 +29,10 @@ export function PublicationsArchive() {
 
   const renderCard = (pub: Publication, idx: number) => (
     <ScrollReveal key={pub.id} delay={Math.min(idx * 0.06, 0.25)}>
-      <article className="rounded-xl bg-[#101624]/85 border border-white/10 hover:border-[#60A5FA]/35 backdrop-blur-sm p-6 md:p-7 transition-all duration-300">
+      <article
+        id={pub.id}
+        className="scroll-mt-24 rounded-xl bg-[#101624]/85 border border-white/10 hover:border-[#60A5FA]/35 backdrop-blur-sm p-6 md:p-7 transition-all duration-300"
+      >
         <div className="flex flex-wrap items-center justify-between gap-3 mb-3.5">
           <div className="flex flex-wrap items-center gap-2">
             <span className="text-[11px] font-mono font-semibold text-[#080B12] bg-[#60A5FA] px-2 py-0.5 rounded">
