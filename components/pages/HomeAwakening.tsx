@@ -266,19 +266,19 @@ export function HomeAwakening() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {/* Mentor 1: Sandip Chakraborty */}
+            {/* Mentor 1: Dr. Sandip Chakraborty */}
             <div className="rounded-xl p-5 bg-[#101624]/90 border border-white/10 hover:border-[#60A5FA]/40 transition-colors flex gap-5 items-start">
               <div className="flex flex-col items-center gap-2 shrink-0">
                 <MentorAvatar
                   src="/images/mentors/sandip-chakraborty.jpg"
-                  alt="Sandip Chakraborty"
+                  alt="Dr. Sandip Chakraborty"
                   initials="SC"
                 />
                 <a
                   href="https://scholar.google.com/citations?hl=en&user=pQ6C8YAAAAAJ"
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Sandip Chakraborty — Google Scholar"
+                  title="Dr. Sandip Chakraborty — Google Scholar"
                   className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-[#60A5FA]/10 border border-[#60A5FA]/25 text-[#93C5FD] hover:bg-[#60A5FA]/20 text-[10px] font-mono transition-colors"
                 >
                   <GoogleScholarIcon className="w-3 h-3" />
@@ -289,7 +289,7 @@ export function HomeAwakening() {
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <h3 className="text-base font-semibold text-[#F8FAFC]">
-                    Sandip Chakraborty
+                    Dr. Sandip Chakraborty
                   </h3>
                   <span className="text-[10px] font-mono text-[#94A3B8]">
                     May – Jul 2026

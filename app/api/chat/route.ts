@@ -19,7 +19,7 @@ export async function POST(req: Request) {
       Trustworthy and Certified Machine Learning, Neuro-Symbolic Learning, Graph Neural Networks, Neuromorphic & Membrane Computing (Spiking Neural P Systems), Reliable Generative Models, Uncertainty Quantification, Time-Series Forecasting, Learning Theory.
 
       VERIFIED RESEARCH & ENGINEERING EXPERIENCE:
-      1. IIT KHARAGPUR (Research Intern, Ubiquitous Network Lab) [May 2026 – Jul 2026, Supervisor: Sandip Chakraborty]: Built a multithreaded automated 5G QoE measurement framework on Jetson Nano and Android devices; decoupled Appium UI automation from ADB logging and extracted raw baseband metrics via Magisk/root shell scripts.
+      1. IIT KHARAGPUR (Research Intern, Ubiquitous Network Lab) [May 2026 – Jul 2026, Supervisor: Dr. Sandip Chakraborty]: Built a multithreaded automated 5G QoE measurement framework on Jetson Nano and Android devices; decoupled Appium UI automation from ADB logging and extracted raw baseband metrics via Magisk/root shell scripts.
       2. QUANTYRA ANALYTICS (SWE Intern - 4Sight) [Nov 2025 – Jan 2026]: Built backend modules for SEO analytics platform processing 20+ KPIs across GA4 & GSC, OAuth 2.0 lifecycle management, keyword planner, competitor overlap analysis, and 25+ SEO diagnostics.
 
       ACCEPTED PUBLICATIONS:

@@ -9,7 +9,7 @@ const experiences = [
     role: "Research Intern — Ubiquitous Network Lab",
     company: "IIT Kharagpur",
     supervisor: {
-      name: "Sandip Chakraborty",
+      name: "Dr. Sandip Chakraborty",
       url: "https://scholar.google.com/citations?hl=en&user=pQ6C8YAAAAAJ",
     },
     location: "Kharagpur, India",
