@@ -78,9 +78,9 @@ export default async function RootLayout({
           </SidebarProvider>
 
           {/* Sanity */}
-          <SanityLive />
           {(await draftMode()).isEnabled && (
             <>
+              <SanityLive />
               <VisualEditing />
               <DisableDraftMode />
             </>
