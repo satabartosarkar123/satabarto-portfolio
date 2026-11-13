@@ -11,14 +11,15 @@ export function ContactSignal() {
       <section className="min-h-screen px-6 py-24 flex items-center">
         <div className="max-w-3xl mx-auto w-full">
           <ScrollReveal>
-            <p className="text-[10px] font-mono text-[#64FFDA]/50 tracking-[0.4em] uppercase mb-4">
-              Region: The Signal
+            <p className="text-[11px] font-mono text-[#64FFDA] tracking-[0.25em] uppercase mb-3">
+              Get In Touch
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#E8F5E9] mb-2">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#F1F5F9] mb-2">
               Contact
             </h1>
-            <p className="text-sm text-[#81C784]/60 max-w-lg mb-2">
-              Send a signal. I&apos;m listening.
+            <p className="text-sm text-[#94A3B8] max-w-lg mb-2">
+              Open to research collaborations, internships, and engineering
+              roles.
             </p>
             <div className="h-[1px] w-24 bg-gradient-to-r from-[#64FFDA]/40 to-transparent mb-16" />
           </ScrollReveal>

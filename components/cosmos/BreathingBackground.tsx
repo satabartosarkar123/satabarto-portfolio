@@ -1,81 +1,43 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
 export function BreathingBackground() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let animationId: number;
-    let time = 0;
-
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    const draw = () => {
-      time += 0.002;
-      const w = canvas.width;
-      const h = canvas.height;
-
-      // Background
-      ctx.fillStyle = "#0B140F";
-      ctx.fillRect(0, 0, w, h);
-
-      // Breathing nebula gradient
-      const breathe = Math.sin(time) * 0.15 + 0.85;
-      const grad = ctx.createRadialGradient(
-        w * 0.7,
-        h * 0.3,
-        0,
-        w * 0.5,
-        h * 0.5,
-        w * 0.8,
-      );
-      grad.addColorStop(0, `rgba(61, 26, 120, ${0.12 * breathe})`);
-      grad.addColorStop(0.4, `rgba(15, 31, 23, ${0.08 * breathe})`);
-      grad.addColorStop(1, "rgba(11, 20, 15, 0)");
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, w, h);
-
-      // Secondary pulse
-      const pulse = Math.sin(time * 1.3 + 1) * 0.1 + 0.9;
-      const grad2 = ctx.createRadialGradient(
-        w * 0.2,
-        h * 0.7,
-        0,
-        w * 0.3,
-        h * 0.6,
-        w * 0.5,
-      );
-      grad2.addColorStop(0, `rgba(100, 255, 218, ${0.03 * pulse})`);
-      grad2.addColorStop(1, "rgba(11, 20, 15, 0)");
-      ctx.fillStyle = grad2;
-      ctx.fillRect(0, 0, w, h);
-
-      animationId = requestAnimationFrame(draw);
-    };
-
-    draw();
-    return () => {
-      cancelAnimationFrame(animationId);
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
-
   return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 z-0 pointer-events-none"
+    <div
+      className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#091118]"
       aria-hidden="true"
-    />
+    >
+      {/* Rich radial accent glows — vibrant without being noisy */}
+      <div
+        className="absolute -top-40 right-[-10%] w-[680px] h-[680px] rounded-full opacity-30 blur-[120px]"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(100,255,218,0.22) 0%, rgba(16,185,129,0.08) 45%, transparent 75%)",
+        }}
+      />
+      <div
+        className="absolute top-[35%] -left-40 w-[620px] h-[620px] rounded-full opacity-30 blur-[120px]"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(139,92,246,0.25) 0%, rgba(59,130,246,0.08) 45%, transparent 75%)",
+        }}
+      />
+      <div
+        className="absolute bottom-[-20%] right-[20%] w-[520px] h-[520px] rounded-full opacity-20 blur-[110px]"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 70%)",
+        }}
+      />
+
+      {/* Crisp subtle architectural grid */}
+      <div
+        className="absolute inset-0 opacity-[0.06]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgba(148,163,184,0.4) 1px, transparent 1px), linear-gradient(to bottom, rgba(148,163,184,0.4) 1px, transparent 1px)",
+          backgroundSize: "56px 56px",
+        }}
+      />
+    </div>
   );
 }

@@ -39,14 +39,14 @@ export function ExperienceTimeline() {
       <section className="min-h-screen px-6 py-24">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
-            <p className="text-[10px] font-mono text-[#64FFDA]/50 tracking-[0.4em] uppercase mb-4">
-              Region: The Timeline River
+            <p className="text-[11px] font-mono text-[#64FFDA] tracking-[0.25em] uppercase mb-3">
+              Internships &amp; Research
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#E8F5E9] mb-2">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#F1F5F9] mb-2">
               Experience
             </h1>
-            <p className="text-sm text-[#81C784]/60 max-w-lg mb-2">
-              Each node represents a stage of applied learning.
+            <p className="text-sm text-[#94A3B8] max-w-lg mb-2">
+              Applied research and backend software engineering roles.
             </p>
             <div className="h-[1px] w-24 bg-gradient-to-r from-[#64FFDA]/40 to-transparent mb-16" />
           </ScrollReveal>
@@ -84,9 +84,9 @@ export function ExperienceTimeline() {
                       </p>
 
                       <ul className="space-y-3 mb-5">
-                        {exp.bullets.map((bullet, i) => (
+                        {exp.bullets.map((bullet) => (
                           <li
-                            key={i}
+                            key={bullet}
                             className="flex items-start gap-3 text-sm text-[#E8F5E9]/70 leading-relaxed"
                           >
                             <span className="text-[#64FFDA] mt-1.5 text-[6px]">

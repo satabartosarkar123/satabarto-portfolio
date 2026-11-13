@@ -9,7 +9,6 @@ import { VisitorTracker } from "@/components/analytics/VisitorTracker";
 import { AppSidebar } from "@/components/app-sidebar";
 import { BreathingBackground } from "@/components/cosmos/BreathingBackground";
 import { CosmicNav } from "@/components/cosmos/CosmicNav";
-import { ParticleField } from "@/components/cosmos/ParticleField";
 import { DisableDraftMode } from "@/components/DisableDraftMode";
 import SidebarToggle from "@/components/SidebarToggle";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -63,9 +62,8 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {/* Living World Layers */}
+            {/* Background */}
             <BreathingBackground />
-            <ParticleField count={35} />
 
             {/* Navigation */}
             <CosmicNav />

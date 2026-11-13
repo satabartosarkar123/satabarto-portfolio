@@ -39,8 +39,8 @@ export function ProjectsConstructs() {
       <section className="min-h-screen px-6 py-24">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
-            <p className="text-[10px] font-mono text-[#64FFDA]/50 tracking-[0.4em] uppercase mb-4">
-              Region: The Constructs
+            <p className="text-[11px] font-mono text-[#64FFDA] tracking-[0.25em] uppercase mb-3">
+              Systems &amp; Engineering
             </p>
             <h1 className="text-4xl md:text-5xl font-bold text-[#E8F5E9] mb-2">
               Projects
@@ -66,7 +66,6 @@ export function ProjectsConstructs() {
                           {project.subtitle} · {project.period}
                         </p>
                       </div>
-
                     </div>
                   </div>
 

@@ -4,13 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const routes = [
-  { href: "/", label: "Home", region: "Awakening" },
-  { href: "/about", label: "About", region: "Mind" },
-  { href: "/projects", label: "Projects", region: "Constructs" },
-  { href: "/publications", label: "Publications", region: "Archive" },
-  { href: "/experience", label: "Experience", region: "Timeline" },
-  { href: "/skills", label: "Skills", region: "Ecosystem" },
-  { href: "/contact", label: "Contact", region: "Signal" },
+  { href: "/", label: "Home", region: "Overview" },
+  { href: "/about", label: "About", region: "Background" },
+  { href: "/publications", label: "Publications", region: "Research" },
+  { href: "/projects", label: "Projects", region: "Engineering" },
+  { href: "/experience", label: "Experience", region: "Experience" },
+  { href: "/skills", label: "Skills", region: "Stack" },
+  { href: "/personal", label: "Personal", region: "Personal Corner" },
+  { href: "/contact", label: "Contact", region: "Contact" },
 ];
 
 export function CosmicNav() {
