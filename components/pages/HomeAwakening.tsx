@@ -90,7 +90,10 @@ export function HomeAwakening() {
                 B.Tech CSE · IEM Kolkata
               </span>
               <span className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10 text-[#64FFDA]">
-                CGPA 9.78 · Top 5%
+                CGPA 9.8/10 · Top 1%
+              </span>
+              <span className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10 text-[#a78bfa]">
+                GATE 2026 CS: AIR 2,855 (Top 1.35%)
               </span>
               <span className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10">
                 Kolkata, India

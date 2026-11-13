@@ -38,17 +38,20 @@ export function AboutMind() {
             <ScrollReveal delay={0.3}>
               <div className="stardust-hover rounded-xl p-8 bg-[#0F1F17]/60 backdrop-blur-sm">
                 <p className="text-[#E8F5E9]/80 leading-relaxed text-base">
-                  Currently in my third year at the Institute of Engineering and
-                  Management, Kolkata, carrying a{" "}
-                  <span className="text-[#64FFDA]">9.78 CGPA</span> and placed
-                  in the
+                  Final-year B.Tech Computer Science &amp; Engineering student
+                  at the Institute of Engineering and Management, Kolkata,
+                  carrying a <span className="text-[#64FFDA]">9.8/10 CGPA</span>{" "}
+                  and ranked in the{" "}
                   <span className="text-[#64FFDA]">
-                    {" "}
-                    top 5% of the department
+                    top 1% of the cohort (Y1/Y2/Y3 rank: 6/4/1 of 225)
                   </span>
-                  . I lead the Industry Team at IEM&apos;s Centre of Excellence
-                  in Generative AI and have served as a core ML member at Google
-                  Developer Group on campus.
+                  , with{" "}
+                  <span className="text-[#a78bfa]">
+                    GATE 2026 CS AIR 2,855 / 211,020 (top 1.35%)
+                  </span>
+                  . I served as Industry Team Student Lead at IEM&apos;s Centre
+                  of Excellence in Generative AI and as a core ML member at
+                  Google Developer Group on campus.
                 </p>
               </div>
             </ScrollReveal>
@@ -58,10 +61,10 @@ export function AboutMind() {
           <ScrollReveal delay={0.4}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
               {[
-                { value: "9.76", label: "CGPA / 10" },
-                { value: "Top 5%", label: "Department Rank" },
-                { value: "2", label: "Production Systems" },
-                { value: "2", label: "Industry Internships" },
+                { value: "9.8", label: "CGPA / 10" },
+                { value: "Top 1%", label: "Cohort Rank (1/225 Y3)" },
+                { value: "AIR 2,855", label: "GATE 2026 CS (Top 1.35%)" },
+                { value: "2 + 8", label: "Accepted / Under Review" },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -91,7 +94,13 @@ export function AboutMind() {
                     degree: "B.Tech in Computer Science & Engineering",
                     place: "Institute of Engineering & Management, Kolkata",
                     period: "2023 – 2027",
-                    note: "CGPA 9.76 · Top 5%",
+                    note: "CGPA 9.8/10 · Top 1%",
+                  },
+                  {
+                    degree: "GATE 2026 — Computer Science & IT",
+                    place: "National Examination (211,020 candidates)",
+                    period: "2026",
+                    note: "AIR 2,855 · Top 1.35%",
                   },
                   {
                     degree: "Higher Secondary (12th) — Science",
@@ -188,9 +197,10 @@ export function AboutMind() {
                 </h2>
                 <div className="space-y-3">
                   {[
+                    "NPTEL Deep Learning (IIT Ropar)",
+                    "Oracle Agentic AI Foundations Associate",
                     "McKinsey Forward Program",
-                    "Google Business Intelligence",
-                    "Cisco Cybersecurity",
+                    "IEEE Student Member & IEEE GRSS Member",
                   ].map((cert) => (
                     <div
                       key={cert}

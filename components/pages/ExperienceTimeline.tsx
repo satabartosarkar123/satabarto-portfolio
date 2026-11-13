@@ -5,6 +5,18 @@ import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
 
 const experiences = [
   {
+    role: "Research Intern — Ubiquitous Network Lab",
+    company: "IIT Kharagpur · Supervisor: Prof. Sandip Chakraborty",
+    period: "May 2026 – Jul 2026",
+    description:
+      "Automated 5G QoE measurement and low-level telemetry capture on edge and mobile devices.",
+    bullets: [
+      "Built a multithreaded automated 5G QoE measurement framework on Jetson Nano and Android devices for continuous measurement.",
+      "Decoupled Appium UI automation from ADB logging for parallel capture of network and app metrics, preserving telemetry through crashes and timeouts; extracted raw baseband metrics via Magisk/root shell scripts.",
+    ],
+    tech: ["5G QoE", "Jetson Nano", "Android", "Appium", "ADB", "Python"],
+  },
+  {
     role: "SWE Intern — 4sight Platform",
     company: "Quantyra Analytics",
     period: "Nov 2025 – Jan 2026",

@@ -16,17 +16,30 @@ const clusters = [
     organisms: ["Node.js", "Express.js", "Flask", "Django", "REST APIs"],
   },
   {
-    title: "Intelligence & ML",
+    title: "ML, DL & Graph Learning",
     icon: "◈",
     organisms: [
       "PyTorch",
       "scikit-learn",
-      "pandas",
-      "NumPy",
+      "timm",
+      "Hugging Face Hub",
+      "RDKit",
+      "OGB",
       "LangChain",
       "Gemini API",
-      "Mistral API",
-      "OpenAI API",
+    ],
+  },
+  {
+    title: "Statistics & Learning Theory",
+    icon: "∑",
+    organisms: [
+      "Conformal Prediction",
+      "Permutation & FWER Control",
+      "Wilcoxon & Bootstrap",
+      "Learning Theory",
+      "Information Theory",
+      "Group Theory",
+      "Convex Optimisation",
     ],
   },
   {
@@ -35,14 +48,26 @@ const clusters = [
     organisms: ["React.js", "Next.js", "HTML", "CSS", "Tailwind CSS"],
   },
   {
-    title: "Data Stores",
+    title: "Data Stores & Compute",
     icon: "◉",
-    organisms: ["MongoDB", "PostgreSQL", "Redis"],
+    organisms: [
+      "MongoDB",
+      "PostgreSQL",
+      "Redis",
+      "marimo / molab",
+      "Cloud GPUs",
+    ],
   },
   {
-    title: "Tooling & Platforms",
+    title: "Tooling & Scientific Writing",
     icon: "◆",
-    organisms: ["Git", "GitHub", "Firebase", "Postman", "Linux", "Vercel"],
+    organisms: [
+      "LaTeX (IEEEtran, Elsevier, AAAI)",
+      "Git",
+      "GitHub",
+      "Linux",
+      "Vercel",
+    ],
   },
 ];
 
