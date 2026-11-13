@@ -12,8 +12,55 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
 import { publications } from "@/lib/publications";
+
+function GoogleScholarIcon({
+  className = "w-3.5 h-3.5",
+}: {
+  className?: string;
+}) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+    </svg>
+  );
+}
+
+function MentorAvatar({
+  src,
+  alt,
+  initials,
+}: {
+  src: string;
+  alt: string;
+  initials: string;
+}) {
+  const [failed, setFailed] = useState(false);
+  if (failed) {
+    return (
+      <div className="w-16 h-16 rounded-full bg-[#161F33] border border-[#60A5FA]/40 flex items-center justify-center text-sm font-mono font-semibold text-[#93C5FD]">
+        {initials}
+      </div>
+    );
+  }
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt={alt}
+      referrerPolicy="no-referrer"
+      onError={() => setFailed(true)}
+      className="w-16 h-16 rounded-full object-cover border-2 border-[#60A5FA]/40 shadow-[0_0_20px_rgba(96,165,250,0.18)]"
+    />
+  );
+}
 
 const researchPillars = [
   {
@@ -44,11 +91,11 @@ const researchPillars = [
 
 export function HomeAwakening() {
   return (
-    <section className="min-h-screen px-6 py-20 relative">
+    <section className="min-h-screen px-6 py-14 relative">
       <div className="max-w-6xl mx-auto w-full">
         {/* Hero */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center pt-6 pb-16">
-          <div className="space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center pt-4 pb-10">
+          <div className="space-y-5">
             <motion.div
               initial={{ opacity: 0, x: -16 }}
               animate={{ opacity: 1, x: 0 }}
@@ -63,7 +110,7 @@ export function HomeAwakening() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#F8FAFC]"
+              className="text-5xl md:text-6xl font-bold tracking-tight text-[#F8FAFC]"
             >
               Satabarto{" "}
               <span className="bg-gradient-to-r from-[#60A5FA] via-[#818CF8] to-[#38BDF8] bg-clip-text text-transparent">
@@ -75,7 +122,7 @@ export function HomeAwakening() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-base md:text-lg text-[#CBD5E1] leading-relaxed max-w-xl"
+              className="text-base text-[#CBD5E1] leading-relaxed max-w-xl"
             >
               Undergraduate researcher working on{" "}
               <span className="text-[#F8FAFC] font-medium">
@@ -98,7 +145,6 @@ export function HomeAwakening() {
               <span className="text-[#F8FAFC] font-medium">IIT Kharagpur</span>.
             </motion.p>
 
-            {/* Academic credentials strip */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -113,7 +159,6 @@ export function HomeAwakening() {
               </span>
             </motion.div>
 
-            {/* Primary CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -141,12 +186,11 @@ export function HomeAwakening() {
               </Link>
             </motion.div>
 
-            {/* Profile & Contact Links from CV */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.5 }}
-              className="flex flex-wrap items-center gap-4 pt-2 text-xs font-mono text-[#94A3B8]"
+              className="flex flex-wrap items-center gap-4 pt-1 text-xs font-mono text-[#94A3B8]"
             >
               <a
                 href="https://orcid.org/0009-0002-6855-3616"
@@ -195,7 +239,7 @@ export function HomeAwakening() {
             className="flex justify-center lg:justify-end"
           >
             <div className="relative p-1 rounded-2xl bg-gradient-to-br from-[#60A5FA]/40 via-[#818CF8]/25 to-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.6)]">
-              <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-xl overflow-hidden bg-[#101624]">
+              <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-xl overflow-hidden bg-[#101624]">
                 <Image
                   src="/images/satabarto-hero-latest.jpg"
                   alt="Satabarto Sarkar"
@@ -208,9 +252,134 @@ export function HomeAwakening() {
           </motion.div>
         </div>
 
+        {/* Guided & Mentored By — visible right on the first screen */}
+        <div className="mb-12">
+          <div className="mb-4">
+            <p className="text-[11px] font-mono text-[#60A5FA] uppercase tracking-widest mb-1">
+              Research Mentorship
+            </p>
+            <h2 className="text-xl font-bold text-[#F8FAFC]">
+              Guided &amp; Mentored By
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {/* Mentor 1: Sandip Chakraborty */}
+            <div className="rounded-xl p-5 bg-[#101624]/90 border border-white/10 hover:border-[#60A5FA]/40 transition-colors flex gap-5 items-start">
+              <div className="flex flex-col items-center gap-2 shrink-0">
+                <MentorAvatar
+                  src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=pQ6C8YAAAAAJ"
+                  alt="Sandip Chakraborty"
+                  initials="SC"
+                />
+                <a
+                  href="https://scholar.google.com/citations?hl=en&user=pQ6C8YAAAAAJ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Sandip Chakraborty — Google Scholar"
+                  className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-[#60A5FA]/10 border border-[#60A5FA]/25 text-[#93C5FD] hover:bg-[#60A5FA]/20 text-[10px] font-mono transition-colors"
+                >
+                  <GoogleScholarIcon className="w-3 h-3" />
+                  <span>Scholar</span>
+                </a>
+              </div>
+
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-base font-semibold text-[#F8FAFC]">
+                    Sandip Chakraborty
+                  </h3>
+                  <span className="text-[10px] font-mono text-[#94A3B8]">
+                    May – Jul 2026
+                  </span>
+                </div>
+                <p className="text-xs font-mono text-[#60A5FA] mt-0.5 mb-2">
+                  IIT Kharagpur · Ubiquitous Network Lab
+                </p>
+                <p className="text-xs text-[#CBD5E1] leading-relaxed mb-3">
+                  Research Intern under his supervision — built a multithreaded
+                  automated 5G QoE measurement framework on Jetson Nano and
+                  Android devices, decoupling Appium UI automation from ADB
+                  logging and extracting baseband metrics via Magisk/root.
+                </p>
+                <Link
+                  href="/experience"
+                  className="inline-flex items-center gap-1 text-[11px] font-mono text-[#60A5FA] hover:underline"
+                >
+                  Experience <ArrowRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Mentor 2: Dr. Prithwineel Paul */}
+            <div className="rounded-xl p-5 bg-[#101624]/90 border border-white/10 hover:border-[#818CF8]/40 transition-colors flex gap-5 items-start">
+              <div className="flex flex-col items-center gap-2 shrink-0">
+                <MentorAvatar
+                  src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=DYqUKZMAAAAJ"
+                  alt="Dr. Prithwineel Paul"
+                  initials="PP"
+                />
+                <a
+                  href="https://scholar.google.com/citations?hl=en&user=DYqUKZMAAAAJ&view_op=list_works&sortby=pubdate"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Dr. Prithwineel Paul — Google Scholar"
+                  className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-[#818CF8]/10 border border-[#818CF8]/25 text-[#A5B4FC] hover:bg-[#818CF8]/20 text-[10px] font-mono transition-colors"
+                >
+                  <GoogleScholarIcon className="w-3 h-3" />
+                  <span>Scholar</span>
+                </a>
+              </div>
+
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-base font-semibold text-[#F8FAFC]">
+                    Dr. Prithwineel Paul
+                  </h3>
+                  <span className="text-[10px] font-mono text-[#94A3B8]">
+                    2025 – Present
+                  </span>
+                </div>
+                <p className="text-xs font-mono text-[#818CF8] mt-0.5 mb-2">
+                  Research Guide · Neuro-Symbolic, GNNs &amp; SNP
+                </p>
+                <p className="text-xs text-[#CBD5E1] leading-relaxed mb-3">
+                  Guided my work across symbolic rule learnability in GNNs,
+                  event-driven Spiking Neural P networks, Takagi–Sugeno
+                  neuro-fuzzy forecasting, and certified image authentication.
+                </p>
+                <div className="flex flex-wrap items-center gap-1.5 text-[10px] font-mono">
+                  {[
+                    { code: "W1", id: "sarkar2026pricing" },
+                    { code: "J2", id: "j2-rules-gnns" },
+                    { code: "J3", id: "j3-fuzzy-lstm-snp" },
+                    { code: "J5", id: "j5-program-symmetry" },
+                    { code: "W2", id: "w2-sparsity-free" },
+                    { code: "W3", id: "w3-accept-defer-flag" },
+                  ].map((ref) => (
+                    <Link
+                      key={ref.code}
+                      href={`/publications#${ref.id}`}
+                      className="px-2 py-0.5 rounded bg-[#818CF8]/15 text-[#A5B4FC] border border-[#818CF8]/25 hover:bg-[#818CF8]/30 transition-colors"
+                    >
+                      [{ref.code}]
+                    </Link>
+                  ))}
+                  <Link
+                    href="/publications#sarkar2026pricing"
+                    className="inline-flex items-center gap-1 text-[#60A5FA] hover:underline ml-1"
+                  >
+                    Publications <ArrowRight className="w-3 h-3" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Research Interests */}
         <ScrollReveal delay={0.1}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-14">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
             {researchPillars.map((pillar) => {
               const Icon = pillar.icon;
               return (
@@ -231,131 +400,8 @@ export function HomeAwakening() {
           </div>
         </ScrollReveal>
 
-        {/* Research Supervision & Mentorship */}
-        <ScrollReveal delay={0.15}>
-          <div className="mb-14">
-            <div className="mb-5">
-              <p className="text-[11px] font-mono text-[#60A5FA] uppercase tracking-widest mb-1">
-                Research Supervision &amp; Mentorship
-              </p>
-              <h2 className="text-xl font-bold text-[#F8FAFC]">Advised By</h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {/* Advisor 1: Sandip Chakraborty */}
-              <div className="rounded-xl p-6 bg-[#101624]/85 border border-white/10 hover:border-[#60A5FA]/35 transition-colors flex flex-col justify-between">
-                <div>
-                  <div className="flex items-start justify-between gap-3 mb-2">
-                    <div>
-                      <h3 className="text-base font-semibold text-[#F8FAFC]">
-                        Sandip Chakraborty
-                      </h3>
-                      <p className="text-xs font-mono text-[#60A5FA] mt-0.5">
-                        IIT Kharagpur · Ubiquitous Network Lab
-                      </p>
-                    </div>
-                    <span className="text-[10px] font-mono text-[#94A3B8] px-2.5 py-1 rounded bg-white/[0.04] border border-white/10 shrink-0">
-                      May – Jul 2026
-                    </span>
-                  </div>
-
-                  <p className="text-xs text-[#CBD5E1] leading-relaxed mt-3 mb-4">
-                    Supervised my Research Internship at the Ubiquitous Network
-                    Lab, IIT Kharagpur — building a multithreaded automated 5G
-                    QoE measurement framework on Jetson Nano and Android
-                    devices, decoupling Appium UI automation from ADB logging
-                    and extracting raw baseband metrics via Magisk/root shell
-                    scripts.
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-white/10 text-xs font-mono">
-                  <a
-                    href="https://scholar.google.com/citations?hl=en&user=pQ6C8YAAAAAJ"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[#93C5FD] hover:underline"
-                  >
-                    Google Scholar <ExternalLink className="w-3 h-3" />
-                  </a>
-                  <Link
-                    href="/experience"
-                    className="inline-flex items-center gap-1 text-[#60A5FA] hover:underline"
-                  >
-                    Experience <ArrowRight className="w-3 h-3" />
-                  </Link>
-                </div>
-              </div>
-
-              {/* Advisor 2: Dr. Prithwineel Paul */}
-              <div className="rounded-xl p-6 bg-[#101624]/85 border border-white/10 hover:border-[#818CF8]/35 transition-colors flex flex-col justify-between">
-                <div>
-                  <div className="flex items-start justify-between gap-3 mb-2">
-                    <div>
-                      <h3 className="text-base font-semibold text-[#F8FAFC]">
-                        Dr. Prithwineel Paul
-                      </h3>
-                      <p className="text-xs font-mono text-[#818CF8] mt-0.5">
-                        Research Advisor · Neuro-Symbolic, GNNs &amp; SNP
-                      </p>
-                    </div>
-                    <span className="text-[10px] font-mono text-[#94A3B8] px-2.5 py-1 rounded bg-white/[0.04] border border-white/10 shrink-0">
-                      2025 – Present
-                    </span>
-                  </div>
-
-                  <p className="text-xs text-[#CBD5E1] leading-relaxed mt-3 mb-4">
-                    Advisor &amp; co-author across symbolic rule learnability in
-                    GNNs, event-driven Spiking Neural P networks, Takagi–Sugeno
-                    neuro-fuzzy forecasting, certified image authentication, and
-                    program symmetry in concept grounding.
-                  </p>
-                </div>
-
-                <div className="space-y-3 pt-4 border-t border-white/10">
-                  <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-mono">
-                    <span className="text-[#94A3B8] mr-1">Papers:</span>
-                    {[
-                      { code: "W1", id: "sarkar2026pricing" },
-                      { code: "J2", id: "j2-rules-gnns" },
-                      { code: "J3", id: "j3-fuzzy-lstm-snp" },
-                      { code: "J5", id: "j5-program-symmetry" },
-                      { code: "W2", id: "w2-sparsity-free" },
-                      { code: "W3", id: "w3-accept-defer-flag" },
-                    ].map((ref) => (
-                      <Link
-                        key={ref.code}
-                        href={`/publications#${ref.id}`}
-                        className="px-2 py-0.5 rounded bg-[#818CF8]/15 text-[#A5B4FC] border border-[#818CF8]/25 hover:bg-[#818CF8]/30 transition-colors"
-                      >
-                        [{ref.code}]
-                      </Link>
-                    ))}
-                  </div>
-                  <div className="flex flex-wrap items-center gap-3 text-xs font-mono">
-                    <a
-                      href="https://scholar.google.com/citations?hl=en&user=DYqUKZMAAAAJ&view_op=list_works&sortby=pubdate"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-[#A5B4FC] hover:underline"
-                    >
-                      Google Scholar <ExternalLink className="w-3 h-3" />
-                    </a>
-                    <Link
-                      href="/publications#sarkar2026pricing"
-                      className="inline-flex items-center gap-1 text-[#60A5FA] hover:underline"
-                    >
-                      Publications <ArrowRight className="w-3 h-3" />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ScrollReveal>
-
         {/* Accepted Publications Preview */}
-        <ScrollReveal delay={0.2}>
+        <ScrollReveal delay={0.15}>
           <div className="rounded-2xl border border-white/10 bg-[#101624]/85 p-6 md:p-8 backdrop-blur-sm">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
