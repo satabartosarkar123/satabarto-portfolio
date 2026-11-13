@@ -1,3 +1,71 @@
+export interface CoAuthorProfile {
+  name: string;
+  aliases: string[];
+  scholarUrl: string;
+  scholarId: string;
+  papers: string[];
+}
+
+export const coAuthors: CoAuthorProfile[] = [
+  {
+    name: "Dr. Prithwineel Paul",
+    aliases: ["Prithwineel Paul"],
+    scholarUrl:
+      "https://scholar.google.com/citations?hl=en&user=DYqUKZMAAAAJ&view_op=list_works&sortby=pubdate",
+    scholarId: "DYqUKZMAAAAJ",
+    papers: ["W1", "J2", "J3", "J5", "W2", "W3"],
+  },
+  {
+    name: "Dr. D. Sobya",
+    aliases: ["D. Sobya"],
+    scholarUrl: "https://scholar.google.com/citations?user=hc5NaiEAAAAJ&hl=en",
+    scholarId: "hc5NaiEAAAAJ",
+    papers: ["J1"],
+  },
+  {
+    name: "Prof. Ferrante Neri",
+    aliases: ["Ferrante Neri"],
+    scholarUrl: "https://scholar.google.com/citations?user=h0JDq7sAAAAJ&hl=en",
+    scholarId: "h0JDq7sAAAAJ",
+    papers: ["J3"],
+  },
+  {
+    name: "Prof. Gexiang Zhang",
+    aliases: ["Gexiang Zhang"],
+    scholarUrl: "https://scholar.google.com/citations?user=R2th41cAAAAJ&hl=en",
+    scholarId: "R2th41cAAAAJ",
+    papers: ["J3"],
+  },
+  {
+    name: "Dr. David Orellana-Martín",
+    aliases: ["David Orellana-Martín", "David Orellana Martín"],
+    scholarUrl: "https://scholar.google.com/citations?user=20vey8cAAAAJ&hl=es",
+    scholarId: "20vey8cAAAAJ",
+    papers: ["J3"],
+  },
+  {
+    name: "Antonio Ramírez de Arellano Marrero",
+    aliases: ["Antonio Ramírez de Arellano Marrero", "Antonio Ramírez Marrero"],
+    scholarUrl: "https://scholar.google.com/citations?user=a9DmsfAAAAAJ&hl=es",
+    scholarId: "a9DmsfAAAAAJ",
+    papers: ["J3"],
+  },
+  {
+    name: "Prof. Agustín Riscos-Núñez",
+    aliases: ["Agustín Riscos-Núñez", "Agustín Riscos Núñez"],
+    scholarUrl: "https://scholar.google.com/citations?user=iBOvTD8AAAAJ&hl=es",
+    scholarId: "iBOvTD8AAAAJ",
+    papers: ["J3"],
+  },
+];
+
+export function getCoAuthorScholarUrl(authorName: string): string | undefined {
+  const match = coAuthors.find(
+    (c) => c.name === authorName || c.aliases.includes(authorName),
+  );
+  return match?.scholarUrl;
+}
+
 export interface Publication {
   id: string;
   code: string;
