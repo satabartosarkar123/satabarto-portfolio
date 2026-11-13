@@ -1,7 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, Cpu, ExternalLink, Layers } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  Cpu,
+  ExternalLink,
+  Layers,
+  Mail,
+  Phone,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
@@ -10,27 +18,27 @@ import { publications } from "@/lib/publications";
 const researchPillars = [
   {
     icon: BookOpen,
-    title: "Topological & Neuro-Symbolic ML",
+    title: "Trustworthy & Certified ML",
     detail:
-      "Training-free topological verification for SAR-to-optical translation (IEEE GRSL) and symbolic rule pricing over Graph Neural Networks (ACML GraphML).",
-    accent: "text-[#64FFDA]",
-    border: "border-[#64FFDA]/20",
+      "Conformal risk control, randomized smoothing (Clopper–Pearson bounds), rough-set three-way authentication, and training-free topological verification.",
+    accent: "text-[#60A5FA]",
+    border: "border-[#60A5FA]/20",
   },
   {
     icon: Layers,
-    title: "Fault-Tolerant Backend Systems",
+    title: "Neuro-Symbolic & Graph Learning",
     detail:
-      "ACID double-entry financial ledgers, idempotency guarantees, OAuth 2.0 lifecycle pipelines, and concurrency-safe API design.",
-    accent: "text-[#a78bfa]",
-    border: "border-[#a78bfa]/20",
+      "Information-theoretic learnability laws for symbolic rules in GNNs, out-of-fold rule discovery, and program-symmetry theory of concept grounding.",
+    accent: "text-[#818CF8]",
+    border: "border-[#818CF8]/20",
   },
   {
     icon: Cpu,
-    title: "Concurrent AI Pipelines",
+    title: "Neuromorphic & Membrane Computing",
     detail:
-      "Multi-stage ingestion, bounded-concurrency LLM execution, Redis caching, and biomedical signal processing (EEG seizure detection).",
-    accent: "text-[#38bdf8]",
-    border: "border-[#38bdf8]/20",
+      "Event-driven Spiking Neural P systems, Takagi–Sugeno fuzzy-recurrent architectures, and ultra-low-energy (~33 nJ) time-series forecasting.",
+    accent: "text-[#38BDF8]",
+    border: "border-[#38BDF8]/20",
   },
 ];
 
@@ -40,26 +48,25 @@ export function HomeAwakening() {
       <div className="max-w-6xl mx-auto w-full">
         {/* Hero */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center pt-6 pb-16">
-          {/* Left: Identity & Focus */}
           <div className="space-y-6">
             <motion.div
               initial={{ opacity: 0, x: -16 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#64FFDA]/25 bg-[#64FFDA]/8 text-[11px] font-mono text-[#64FFDA] tracking-wider uppercase"
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-md border border-[#60A5FA]/25 bg-[#60A5FA]/10 text-[11px] font-mono text-[#93C5FD] tracking-wider uppercase"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[#64FFDA]" />
-              Researcher &amp; Systems Engineer
+              <span className="w-1.5 h-1.5 rounded-full bg-[#60A5FA]" />
+              ML Researcher · B.Tech CSE (2023–2027)
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#F1F5F9]"
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#F8FAFC]"
             >
               Satabarto{" "}
-              <span className="bg-gradient-to-r from-[#64FFDA] via-[#38bdf8] to-[#a78bfa] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#60A5FA] via-[#818CF8] to-[#38BDF8] bg-clip-text text-transparent">
                 Sarkar
               </span>
             </motion.h1>
@@ -67,36 +74,42 @@ export function HomeAwakening() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.25 }}
-              className="text-base md:text-lg text-[#CBD5E1] font-normal leading-relaxed max-w-xl"
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="text-base md:text-lg text-[#CBD5E1] leading-relaxed max-w-xl"
             >
-              Undergraduate CS researcher &amp; backend engineer building
-              verifiable machine learning methods and fault-tolerant distributed
-              systems. Published in{" "}
-              <span className="text-[#64FFDA] font-medium">IEEE GRSL</span> and{" "}
-              <span className="text-[#a78bfa] font-medium">
+              Undergraduate researcher working on{" "}
+              <span className="text-[#F8FAFC] font-medium">
+                Trustworthy &amp; Certified Machine Learning
+              </span>
+              ,{" "}
+              <span className="text-[#F8FAFC] font-medium">
+                Neuro-Symbolic &amp; Graph Learning
+              </span>
+              , and{" "}
+              <span className="text-[#F8FAFC] font-medium">
+                Spiking Neural P Systems
+              </span>
+              . Published in{" "}
+              <span className="text-[#60A5FA] font-medium">IEEE GRSL</span> and{" "}
+              <span className="text-[#818CF8] font-medium">
                 GraphML @ ACML 2026
               </span>
-              .
+              ; Research Intern at{" "}
+              <span className="text-[#F8FAFC] font-medium">IIT Kharagpur</span>.
             </motion.p>
 
+            {/* Academic credentials strip */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.35 }}
-              className="flex flex-wrap items-center gap-3 text-xs font-mono text-[#94A3B8]"
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="flex flex-wrap items-center gap-2.5 text-xs font-mono"
             >
-              <span className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10">
-                B.Tech CSE · IEM Kolkata
+              <span className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10 text-[#CBD5E1]">
+                IEM Kolkata · CGPA 9.8/10 (Top 1%)
               </span>
-              <span className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10 text-[#64FFDA]">
-                CGPA 9.8/10 · Top 1%
-              </span>
-              <span className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10 text-[#a78bfa]">
+              <span className="px-2.5 py-1 rounded-md bg-[#60A5FA]/10 border border-[#60A5FA]/25 text-[#93C5FD]">
                 GATE 2026 CS: AIR 2,855 (Top 1.35%)
-              </span>
-              <span className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10">
-                Kolkata, India
               </span>
             </motion.div>
 
@@ -104,28 +117,73 @@ export function HomeAwakening() {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.45 }}
-              className="flex flex-wrap gap-3 pt-2"
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-wrap gap-3 pt-1"
             >
               <Link
                 href="/publications"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#64FFDA] text-[#091118] text-xs font-mono font-semibold tracking-wider hover:bg-[#52e8c4] transition-all duration-300 shadow-[0_0_24px_rgba(100,255,218,0.2)]"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#60A5FA] text-[#080B12] text-xs font-mono font-semibold tracking-wider hover:bg-[#93C5FD] transition-all duration-200 shadow-[0_8px_24px_rgba(96,165,250,0.22)]"
               >
-                Publications
+                Research Output
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
               <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#a78bfa]/35 bg-[#a78bfa]/10 text-[#E2E8F0] text-xs font-mono tracking-wider hover:border-[#a78bfa]/70 hover:bg-[#a78bfa]/18 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[#818CF8]/35 bg-[#818CF8]/10 text-[#E2E8F0] text-xs font-mono tracking-wider hover:border-[#818CF8]/70 hover:bg-[#818CF8]/20 transition-all duration-200"
               >
-                Engineering Projects
+                Research Projects
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-white/15 text-[#CBD5E1] text-xs font-mono tracking-wider hover:border-white/35 hover:text-white transition-all duration-300"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-white/15 text-[#CBD5E1] text-xs font-mono tracking-wider hover:border-white/35 hover:text-white transition-all duration-200"
               >
-                About &amp; CV
+                Education &amp; Transcripts
               </Link>
+            </motion.div>
+
+            {/* Profile & Contact Links from CV */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.5 }}
+              className="flex flex-wrap items-center gap-4 pt-2 text-xs font-mono text-[#94A3B8]"
+            >
+              <a
+                href="https://orcid.org/0009-0002-6855-3616"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#60A5FA] transition-colors inline-flex items-center gap-1"
+              >
+                ORCID <ExternalLink className="w-3 h-3" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/satabarto-sarkar-5a5467331"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#60A5FA] transition-colors inline-flex items-center gap-1"
+              >
+                LinkedIn <ExternalLink className="w-3 h-3" />
+              </a>
+              <a
+                href="https://github.com/satabartosarkar123"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#60A5FA] transition-colors inline-flex items-center gap-1"
+              >
+                GitHub <ExternalLink className="w-3 h-3" />
+              </a>
+              <a
+                href="mailto:satabartosarkar005@gmail.com"
+                className="hover:text-[#60A5FA] transition-colors inline-flex items-center gap-1"
+              >
+                <Mail className="w-3 h-3" /> satabartosarkar005@gmail.com
+              </a>
+              <a
+                href="tel:+918158933609"
+                className="hover:text-[#60A5FA] transition-colors inline-flex items-center gap-1"
+              >
+                <Phone className="w-3 h-3" /> +91 81589 33609
+              </a>
             </motion.div>
           </div>
 
@@ -133,11 +191,11 @@ export function HomeAwakening() {
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
             className="flex justify-center lg:justify-end"
           >
-            <div className="relative p-1.5 rounded-2xl bg-gradient-to-br from-[#64FFDA]/35 via-[#38bdf8]/20 to-[#a78bfa]/35 shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
-              <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-xl overflow-hidden bg-[#0F172A]">
+            <div className="relative p-1 rounded-2xl bg-gradient-to-br from-[#60A5FA]/40 via-[#818CF8]/25 to-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.6)]">
+              <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-xl overflow-hidden bg-[#101624]">
                 <Image
                   src="/images/satabarto-hero-latest.jpg"
                   alt="Satabarto Sarkar"
@@ -150,18 +208,18 @@ export function HomeAwakening() {
           </motion.div>
         </div>
 
-        {/* Research Focus Pillars */}
+        {/* Research Interests */}
         <ScrollReveal delay={0.1}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-14">
             {researchPillars.map((pillar) => {
               const Icon = pillar.icon;
               return (
                 <div
                   key={pillar.title}
-                  className={`rounded-xl p-6 bg-[#0F1A24]/80 border ${pillar.border} backdrop-blur-sm hover:bg-[#132230]/85 transition-colors`}
+                  className={`rounded-xl p-6 bg-[#101624]/85 border ${pillar.border} backdrop-blur-sm hover:bg-[#141D2F] transition-colors`}
                 >
                   <Icon className={`w-5 h-5 ${pillar.accent} mb-3`} />
-                  <h2 className="text-sm font-semibold text-[#F1F5F9] mb-2">
+                  <h2 className="text-sm font-semibold text-[#F8FAFC] mb-2">
                     {pillar.title}
                   </h2>
                   <p className="text-xs text-[#94A3B8] leading-relaxed">
@@ -173,23 +231,23 @@ export function HomeAwakening() {
           </div>
         </ScrollReveal>
 
-        {/* Selected Publications Preview */}
+        {/* Accepted Publications Preview */}
         <ScrollReveal delay={0.2}>
-          <div className="rounded-2xl border border-white/10 bg-[#0F1A24]/75 p-6 md:p-8 backdrop-blur-sm">
-            <div className="flex items-center justify-between gap-4 mb-6">
+          <div className="rounded-2xl border border-white/10 bg-[#101624]/85 p-6 md:p-8 backdrop-blur-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
-                <p className="text-[11px] font-mono text-[#64FFDA] uppercase tracking-widest mb-1">
-                  Recent Research
+                <p className="text-[11px] font-mono text-[#60A5FA] uppercase tracking-widest mb-1">
+                  Accepted &amp; In Press
                 </p>
-                <h2 className="text-xl font-bold text-[#F1F5F9]">
+                <h2 className="text-xl font-bold text-[#F8FAFC]">
                   Selected Publications
                 </h2>
               </div>
               <Link
                 href="/publications"
-                className="inline-flex items-center gap-1.5 text-xs font-mono text-[#64FFDA] hover:underline"
+                className="inline-flex items-center gap-1.5 text-xs font-mono text-[#60A5FA] hover:underline"
               >
-                All Publications &amp; BibTeX
+                All 10 Papers &amp; BibTeX
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -201,15 +259,15 @@ export function HomeAwakening() {
                   href={pub.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block rounded-xl p-5 border border-white/10 bg-[#091118]/70 hover:border-[#64FFDA]/40 transition-all"
+                  className="group block rounded-xl p-5 border border-white/10 bg-[#080B12]/70 hover:border-[#60A5FA]/45 transition-all"
                 >
-                  <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-[#64FFDA]/10 text-[#64FFDA] border border-[#64FFDA]/20">
-                      {pub.venueShort} · {pub.year}
+                  <div className="flex items-center justify-between gap-2 mb-2.5">
+                    <span className="text-[10px] font-mono px-2.5 py-0.5 rounded bg-[#60A5FA]/15 text-[#93C5FD] border border-[#60A5FA]/25">
+                      [{pub.code}] {pub.venueShort} · {pub.year}
                     </span>
-                    <ExternalLink className="w-3.5 h-3.5 text-[#94A3B8] group-hover:text-[#64FFDA] transition-colors" />
+                    <ExternalLink className="w-3.5 h-3.5 text-[#94A3B8] group-hover:text-[#60A5FA] transition-colors" />
                   </div>
-                  <h3 className="text-sm font-semibold text-[#F1F5F9] leading-snug mb-2 group-hover:text-[#64FFDA] transition-colors">
+                  <h3 className="text-sm font-semibold text-[#F8FAFC] leading-snug mb-2 group-hover:text-[#60A5FA] transition-colors">
                     {pub.title}
                   </h3>
                   <p className="text-xs text-[#94A3B8] line-clamp-1">

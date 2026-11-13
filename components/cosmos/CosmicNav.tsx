@@ -4,12 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const routes = [
-  { href: "/", label: "Home", region: "Overview" },
-  { href: "/about", label: "About", region: "Background" },
+  { href: "/", label: "Overview", region: "Overview" },
   { href: "/publications", label: "Publications", region: "Research" },
-  { href: "/projects", label: "Projects", region: "Engineering" },
+  { href: "/projects", label: "Research & Projects", region: "Projects" },
   { href: "/experience", label: "Experience", region: "Experience" },
-  { href: "/skills", label: "Skills", region: "Stack" },
+  { href: "/about", label: "Education & CV", region: "Education" },
+  { href: "/skills", label: "Skills", region: "Skills" },
   { href: "/personal", label: "Personal", region: "Personal Corner" },
   { href: "/contact", label: "Contact", region: "Contact" },
 ];
@@ -18,45 +18,37 @@ export function CosmicNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-3.5 bg-[#080B12]/80 backdrop-blur-md border-b border-white/[0.06]">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="group flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[#64FFDA] group-hover:shadow-[0_0_12px_rgba(100,255,218,0.6)] transition-all duration-500" />
-          <span className="text-sm font-mono text-[#E8F5E9]/80 tracking-wider group-hover:text-[#64FFDA] transition-colors duration-300">
-            SS
+        <Link href="/" className="group flex items-center gap-2.5">
+          <span className="w-2 h-2 rounded-sm bg-[#60A5FA] group-hover:bg-[#93C5FD] transition-colors" />
+          <span className="text-sm font-mono font-semibold text-[#F1F5F9] tracking-wider group-hover:text-[#60A5FA] transition-colors">
+            SATABARTO SARKAR
           </span>
         </Link>
 
-        {/* Nav Links */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-1">
           {routes.map((route) => {
             const isActive = pathname === route.href;
             return (
               <Link
                 key={route.href}
                 href={route.href}
-                className={`relative px-4 py-2 text-xs font-mono tracking-wider transition-all duration-500 rounded-full
-                  ${
-                    isActive
-                      ? "text-[#64FFDA] bg-[#64FFDA]/8"
-                      : "text-[#81C784]/60 hover:text-[#E8F5E9] hover:bg-[#E8F5E9]/5"
-                  }
-                `}
+                className={`px-3 py-1.5 text-xs font-mono tracking-wide transition-colors rounded-md ${
+                  isActive
+                    ? "text-[#F8FAFC] bg-[#60A5FA]/15 border border-[#60A5FA]/30"
+                    : "text-[#94A3B8] hover:text-[#F1F5F9] hover:bg-white/[0.04]"
+                }`}
               >
-                {isActive && (
-                  <span className="absolute left-2 top-1/2 -translate-y-1/2 w-1 h-1 rounded-full bg-[#64FFDA] shadow-[0_0_6px_rgba(100,255,218,0.8)]" />
-                )}
-                <span className={isActive ? "ml-2" : ""}>{route.label}</span>
+                {route.label}
               </Link>
             );
           })}
         </div>
 
-        {/* Mobile: current region indicator */}
-        <div className="md:hidden">
-          <span className="text-[10px] font-mono text-[#64FFDA]/60 tracking-widest uppercase">
-            {routes.find((r) => r.href === pathname)?.region || "Exploring"}
+        <div className="lg:hidden">
+          <span className="text-[11px] font-mono text-[#60A5FA] tracking-widest uppercase">
+            {routes.find((r) => r.href === pathname)?.region || "Portfolio"}
           </span>
         </div>
       </div>

@@ -54,7 +54,7 @@ export default async function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0B140F]`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#080B12] text-[#F1F5F9]`}
         >
           <ThemeProvider
             attribute="class"

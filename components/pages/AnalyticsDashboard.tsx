@@ -51,14 +51,14 @@ export function AnalyticsDashboard({
           <ScrollReveal>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
               <div>
-                <p className="text-[10px] font-mono text-[#64FFDA]/60 tracking-[0.4em] uppercase mb-3 flex items-center gap-2">
+                <p className="text-[11px] font-mono text-[#60A5FA] tracking-[0.25em] uppercase mb-3 flex items-center gap-2">
                   <ShieldCheck className="w-3.5 h-3.5" />
                   Owner-Only Telemetry · {data.storageBackend.toUpperCase()}
                 </p>
-                <h1 className="text-3xl md:text-4xl font-bold text-[#E8F5E9]">
-                  Visibility & Flag Counter
+                <h1 className="text-3xl md:text-4xl font-bold text-[#F8FAFC]">
+                  Visibility &amp; Flag Counter
                 </h1>
-                <div className="h-[1px] w-24 bg-gradient-to-r from-[#64FFDA]/40 to-transparent mt-3" />
+                <div className="h-[1px] w-24 bg-gradient-to-r from-[#60A5FA]/70 to-transparent mt-3" />
               </div>
 
               <div className="flex items-center gap-3">
@@ -66,7 +66,7 @@ export function AnalyticsDashboard({
                   type="button"
                   onClick={handleRefresh}
                   disabled={loading}
-                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-[#64FFDA]/20 text-[#64FFDA] text-xs font-mono hover:border-[#64FFDA]/50 hover:bg-[#64FFDA]/8 transition-all cursor-pointer disabled:opacity-50"
+                  className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-[#60A5FA]/30 text-[#93C5FD] text-xs font-mono hover:border-[#60A5FA]/70 hover:bg-[#60A5FA]/10 transition-all cursor-pointer disabled:opacity-50"
                 >
                   <RefreshCw
                     className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`}
@@ -77,7 +77,7 @@ export function AnalyticsDashboard({
                   <button
                     type="button"
                     onClick={handleLock}
-                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-[#7c4dff]/25 text-[#b388ff] text-xs font-mono hover:border-[#7c4dff]/50 hover:bg-[#7c4dff]/8 transition-all cursor-pointer"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg border border-[#818CF8]/30 text-[#A5B4FC] text-xs font-mono hover:border-[#818CF8]/70 hover:bg-[#818CF8]/10 transition-all cursor-pointer"
                   >
                     <Lock className="w-3.5 h-3.5" />
                     Lock
@@ -87,48 +87,46 @@ export function AnalyticsDashboard({
             </div>
           </ScrollReveal>
 
-          {/* Summary KPIs */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
-            <div className="stardust-hover rounded-xl p-6 bg-[#0F1F17]/60 backdrop-blur-sm">
-              <div className="flex items-center justify-between text-xs font-mono text-[#81C784]/60 mb-2">
+            <div className="rounded-xl p-6 bg-[#101624]/85 border border-white/10 backdrop-blur-sm">
+              <div className="flex items-center justify-between text-xs font-mono text-[#94A3B8] mb-2">
                 <span>TOTAL VISITS</span>
-                <Eye className="w-4 h-4 text-[#64FFDA]/70" />
+                <Eye className="w-4 h-4 text-[#60A5FA]" />
               </div>
-              <div className="text-3xl font-bold text-[#64FFDA]">
+              <div className="text-3xl font-bold text-[#60A5FA]">
                 {data.totalVisits}
               </div>
             </div>
 
-            <div className="stardust-hover rounded-xl p-6 bg-[#0F1F17]/60 backdrop-blur-sm">
-              <div className="flex items-center justify-between text-xs font-mono text-[#81C784]/60 mb-2">
+            <div className="rounded-xl p-6 bg-[#101624]/85 border border-white/10 backdrop-blur-sm">
+              <div className="flex items-center justify-between text-xs font-mono text-[#94A3B8] mb-2">
                 <span>UNIQUE VISITORS</span>
-                <Users className="w-4 h-4 text-[#b388ff]/80" />
+                <Users className="w-4 h-4 text-[#818CF8]" />
               </div>
-              <div className="text-3xl font-bold text-[#b388ff]">
+              <div className="text-3xl font-bold text-[#818CF8]">
                 {data.uniqueVisitors}
               </div>
             </div>
 
-            <div className="stardust-hover rounded-xl p-6 bg-[#0F1F17]/60 backdrop-blur-sm">
-              <div className="flex items-center justify-between text-xs font-mono text-[#81C784]/60 mb-2">
+            <div className="rounded-xl p-6 bg-[#101624]/85 border border-white/10 backdrop-blur-sm">
+              <div className="flex items-center justify-between text-xs font-mono text-[#94A3B8] mb-2">
                 <span>COUNTRIES</span>
-                <Globe className="w-4 h-4 text-[#64FFDA]/70" />
+                <Globe className="w-4 h-4 text-[#38BDF8]" />
               </div>
-              <div className="text-3xl font-bold text-[#E8F5E9]">
+              <div className="text-3xl font-bold text-[#F8FAFC]">
                 {data.flagCounter.length}
               </div>
             </div>
           </div>
 
-          {/* Flag Counter + Top Pages */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
-            <div className="lg:col-span-2 stardust-hover rounded-xl p-6 bg-[#0F1F17]/60 backdrop-blur-sm">
-              <h2 className="text-sm font-mono text-[#64FFDA] tracking-wider uppercase mb-5 flex items-center gap-2">
+            <div className="lg:col-span-2 rounded-xl p-6 bg-[#101624]/85 border border-white/10 backdrop-blur-sm">
+              <h2 className="text-sm font-mono text-[#60A5FA] tracking-wider uppercase mb-5 flex items-center gap-2">
                 <Globe className="w-4 h-4" />
                 Flag Counter
               </h2>
               {data.flagCounter.length === 0 ? (
-                <p className="text-xs font-mono text-[#81C784]/50">
+                <p className="text-xs font-mono text-[#94A3B8]">
                   No visits recorded yet.
                 </p>
               ) : (
@@ -136,7 +134,7 @@ export function AnalyticsDashboard({
                   {data.flagCounter.map((item) => (
                     <div
                       key={item.countryCode}
-                      className="p-3.5 rounded-lg border border-[#64FFDA]/10 bg-[#0B140F]/50"
+                      className="p-3.5 rounded-lg border border-white/10 bg-[#080B12]/70"
                     >
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2.5">
@@ -144,26 +142,26 @@ export function AnalyticsDashboard({
                             {item.flag}
                           </span>
                           <div>
-                            <p className="text-xs font-medium text-[#E8F5E9]">
+                            <p className="text-xs font-medium text-[#F8FAFC]">
                               {item.countryName}
                             </p>
-                            <p className="text-[10px] font-mono text-[#81C784]/50">
+                            <p className="text-[10px] font-mono text-[#94A3B8]">
                               {item.countryCode}
                             </p>
                           </div>
                         </div>
                         <div className="text-right">
-                          <span className="text-sm font-mono font-semibold text-[#64FFDA]">
+                          <span className="text-sm font-mono font-semibold text-[#60A5FA]">
                             {item.count}
                           </span>
-                          <span className="text-[10px] font-mono text-[#81C784]/50 ml-1.5">
+                          <span className="text-[10px] font-mono text-[#94A3B8] ml-1.5">
                             ({item.percentage}%)
                           </span>
                         </div>
                       </div>
-                      <div className="h-1 w-full rounded-full bg-[#64FFDA]/10 overflow-hidden">
+                      <div className="h-1 w-full rounded-full bg-white/10 overflow-hidden">
                         <div
-                          className="h-full bg-[#64FFDA]/70 rounded-full"
+                          className="h-full bg-[#60A5FA] rounded-full"
                           style={{ width: `${Math.max(item.percentage, 4)}%` }}
                         />
                       </div>
@@ -173,12 +171,12 @@ export function AnalyticsDashboard({
               )}
             </div>
 
-            <div className="stardust-hover rounded-xl p-6 bg-[#0F1F17]/60 backdrop-blur-sm">
-              <h2 className="text-sm font-mono text-[#b388ff] tracking-wider uppercase mb-5">
+            <div className="rounded-xl p-6 bg-[#101624]/85 border border-white/10 backdrop-blur-sm">
+              <h2 className="text-sm font-mono text-[#818CF8] tracking-wider uppercase mb-5">
                 Top Routes
               </h2>
               {data.topPages.length === 0 ? (
-                <p className="text-xs font-mono text-[#81C784]/50">
+                <p className="text-xs font-mono text-[#94A3B8]">
                   No route data yet.
                 </p>
               ) : (
@@ -186,12 +184,12 @@ export function AnalyticsDashboard({
                   {data.topPages.map((page) => (
                     <div
                       key={page.path}
-                      className="flex items-center justify-between text-xs font-mono p-2.5 rounded-lg border border-[#7c4dff]/10 bg-[#0B140F]/50"
+                      className="flex items-center justify-between text-xs font-mono p-2.5 rounded-lg border border-white/10 bg-[#080B12]/70"
                     >
-                      <span className="text-[#E8F5E9]/80 truncate pr-3">
+                      <span className="text-[#CBD5E1] truncate pr-3">
                         {page.path}
                       </span>
-                      <span className="text-[#b388ff] font-semibold shrink-0">
+                      <span className="text-[#818CF8] font-semibold shrink-0">
                         {page.count}
                       </span>
                     </div>
@@ -201,21 +199,20 @@ export function AnalyticsDashboard({
             </div>
           </div>
 
-          {/* Recent Visitors Log */}
-          <div className="stardust-hover rounded-xl p-6 bg-[#0F1F17]/60 backdrop-blur-sm">
-            <h2 className="text-sm font-mono text-[#64FFDA] tracking-wider uppercase mb-5 flex items-center gap-2">
+          <div className="rounded-xl p-6 bg-[#101624]/85 border border-white/10 backdrop-blur-sm">
+            <h2 className="text-sm font-mono text-[#60A5FA] tracking-wider uppercase mb-5 flex items-center gap-2">
               <Monitor className="w-4 h-4" />
               Recent Profile Visitors
             </h2>
             {data.recentVisitors.length === 0 ? (
-              <p className="text-xs font-mono text-[#81C784]/50">
+              <p className="text-xs font-mono text-[#94A3B8]">
                 No visitor records yet.
               </p>
             ) : (
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <thead>
-                    <tr className="border-b border-[#64FFDA]/15 text-[10px] font-mono text-[#81C784]/60 uppercase">
+                    <tr className="border-b border-white/10 text-[10px] font-mono text-[#94A3B8] uppercase">
                       <th className="py-2.5 pr-4">Location</th>
                       <th className="py-2.5 pr-4">Route</th>
                       <th className="py-2.5 pr-4">Client</th>
@@ -224,29 +221,29 @@ export function AnalyticsDashboard({
                       <th className="py-2.5">Time</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#64FFDA]/8 text-xs">
+                  <tbody className="divide-y divide-white/8 text-xs">
                     {data.recentVisitors.map((v) => (
-                      <tr key={v.id} className="hover:bg-[#64FFDA]/4">
+                      <tr key={v.id} className="hover:bg-white/[0.03]">
                         <td className="py-3 pr-4 whitespace-nowrap">
                           <span className="mr-2">{v.flag}</span>
-                          <span className="text-[#E8F5E9]/85">
+                          <span className="text-[#F8FAFC]">
                             {v.city ? `${v.city}, ` : ""}
                             {v.countryName}
                           </span>
                         </td>
-                        <td className="py-3 pr-4 font-mono text-[#64FFDA]/80">
+                        <td className="py-3 pr-4 font-mono text-[#60A5FA]">
                           {v.path}
                         </td>
-                        <td className="py-3 pr-4 text-[#E8F5E9]/70 whitespace-nowrap">
+                        <td className="py-3 pr-4 text-[#CBD5E1] whitespace-nowrap">
                           {v.browser} · {v.os} ({v.device})
                         </td>
-                        <td className="py-3 pr-4 font-mono text-[#81C784]/60">
+                        <td className="py-3 pr-4 font-mono text-[#94A3B8]">
                           {v.referrer}
                         </td>
-                        <td className="py-3 pr-4 font-mono text-[#b388ff]/80">
+                        <td className="py-3 pr-4 font-mono text-[#818CF8]">
                           #{v.visitorHash.slice(0, 8)}
                         </td>
-                        <td className="py-3 font-mono text-[#81C784]/50 whitespace-nowrap">
+                        <td className="py-3 font-mono text-[#94A3B8] whitespace-nowrap">
                           {new Date(v.timestamp).toLocaleString("en-IN", {
                             dateStyle: "short",
                             timeStyle: "short",
@@ -264,4 +261,3 @@ export function AnalyticsDashboard({
     </PageTransition>
   );
 }
-

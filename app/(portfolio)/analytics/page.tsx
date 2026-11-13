@@ -24,14 +24,14 @@ export default async function AnalyticsPage() {
 
     return (
       <section className="min-h-screen flex items-center justify-center px-6 py-24">
-        <div className="max-w-md w-full rounded-xl bg-[#0F1F17]/70 border border-[#64FFDA]/15 p-8 text-center backdrop-blur-sm">
-          <p className="text-[10px] font-mono text-[#64FFDA]/60 tracking-[0.35em] uppercase mb-3">
+        <div className="max-w-md w-full rounded-xl bg-[#101624]/85 border border-white/10 p-8 text-center backdrop-blur-sm">
+          <p className="text-[11px] font-mono text-[#60A5FA] tracking-[0.3em] uppercase mb-3">
             Restricted Sector
           </p>
-          <h1 className="text-2xl font-bold text-[#E8F5E9] mb-2">
+          <h1 className="text-2xl font-bold text-[#F8FAFC] mb-2">
             Owner Telemetry
           </h1>
-          <p className="text-xs text-[#81C784]/70 mb-6 leading-relaxed">
+          <p className="text-xs text-[#94A3B8] mb-6 leading-relaxed">
             {authResult.reason === "forbidden"
               ? "Signed-in account is not authorized to view Satabarto Sarkar's private visitor analytics."
               : "This visibility & flag counter is accessible to Satabarto Sarkar only."}
@@ -42,7 +42,7 @@ export default async function AnalyticsPage() {
               <SignInButton mode="modal">
                 <button
                   type="button"
-                  className="w-full px-4 py-2.5 rounded-lg border border-[#64FFDA]/30 text-[#64FFDA] text-xs font-mono hover:bg-[#64FFDA]/10 transition-colors cursor-pointer"
+                  className="w-full px-4 py-2.5 rounded-lg border border-[#60A5FA]/35 text-[#93C5FD] text-xs font-mono hover:bg-[#60A5FA]/10 transition-colors cursor-pointer"
                 >
                   Sign In as Owner (Clerk)
                 </button>
@@ -82,4 +82,3 @@ export default async function AnalyticsPage() {
     />
   );
 }
-

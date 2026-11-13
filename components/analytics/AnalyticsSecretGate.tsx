@@ -36,14 +36,14 @@ export function AnalyticsSecretGate() {
         value={key}
         onChange={(e) => setKey(e.target.value)}
         placeholder="Owner telemetry key"
-        className="w-full px-3.5 py-2.5 rounded-lg bg-[#0B140F] border border-[#64FFDA]/20 text-xs font-mono text-[#E8F5E9] placeholder:text-[#81C784]/40 focus:outline-none focus:border-[#64FFDA]/50"
+        className="w-full px-3.5 py-2.5 rounded-lg bg-[#080B12] border border-white/15 text-xs font-mono text-[#F8FAFC] placeholder:text-[#94A3B8]/50 focus:outline-none focus:border-[#60A5FA]"
         required
       />
       {error && <p className="text-[11px] font-mono text-[#ef5350]">{error}</p>}
       <button
         type="submit"
         disabled={submitting}
-        className="w-full px-4 py-2.5 rounded-lg border border-[#7c4dff]/30 text-[#b388ff] text-xs font-mono hover:bg-[#7c4dff]/10 transition-colors cursor-pointer disabled:opacity-50"
+        className="w-full px-4 py-2.5 rounded-lg border border-[#818CF8]/35 text-[#A5B4FC] text-xs font-mono hover:bg-[#818CF8]/10 transition-colors cursor-pointer disabled:opacity-50"
       >
         {submitting ? "Verifying..." : "Unlock Telemetry"}
       </button>

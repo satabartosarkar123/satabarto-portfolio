@@ -1,106 +1,95 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Link from "next/link";
+import { ExternalLink, Mail, Phone } from "lucide-react";
 import { PageTransition } from "@/components/cosmos/PageTransition";
 import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
+
+const channels = [
+  {
+    label: "Email",
+    value: "satabartosarkar005@gmail.com",
+    href: "mailto:satabartosarkar005@gmail.com",
+    isExternal: false,
+  },
+  {
+    label: "Phone",
+    value: "+91 81589 33609",
+    href: "tel:+918158933609",
+    isExternal: false,
+  },
+  {
+    label: "ORCID",
+    value: "0009-0002-6855-3616",
+    href: "https://orcid.org/0009-0002-6855-3616",
+    isExternal: true,
+  },
+  {
+    label: "LinkedIn",
+    value: "/in/satabarto-sarkar",
+    href: "https://www.linkedin.com/in/satabarto-sarkar-5a5467331",
+    isExternal: true,
+  },
+  {
+    label: "GitHub",
+    value: "/satabartosarkar123",
+    href: "https://github.com/satabartosarkar123",
+    isExternal: true,
+  },
+];
 
 export function ContactSignal() {
   return (
     <PageTransition>
       <section className="min-h-screen px-6 py-24 flex items-center">
-        <div className="max-w-3xl mx-auto w-full">
+        <div className="max-w-4xl mx-auto w-full">
           <ScrollReveal>
-            <p className="text-[11px] font-mono text-[#64FFDA] tracking-[0.25em] uppercase mb-3">
+            <p className="text-[11px] font-mono text-[#60A5FA] tracking-[0.25em] uppercase mb-3">
               Get In Touch
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#F1F5F9] mb-2">
+            <h1 className="text-4xl md:text-5xl font-bold text-[#F8FAFC] mb-2">
               Contact
             </h1>
-            <p className="text-sm text-[#94A3B8] max-w-lg mb-2">
-              Open to research collaborations, internships, and engineering
-              roles.
+            <p className="text-sm text-[#94A3B8] max-w-lg mb-3">
+              Open to research collaborations, PhD/internship opportunities, and
+              ML systems roles.
             </p>
-            <div className="h-[1px] w-24 bg-gradient-to-r from-[#64FFDA]/40 to-transparent mb-16" />
+            <div className="h-[1px] w-24 bg-gradient-to-r from-[#60A5FA]/70 to-transparent mb-14" />
           </ScrollReveal>
 
-          {/* Signal cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {[
-              {
-                label: "Email",
-                value: "satabartosarkar005@gmail.com",
-                href: "mailto:satabartosarkar005@gmail.com",
-                icon: "✉",
-              },
-              {
-                label: "LinkedIn",
-                value: "/in/satabarto-sarkar",
-                href: "https://www.linkedin.com/in/satabarto-sarkar-5a5467331/",
-                icon: "↗",
-              },
-              {
-                label: "GitHub",
-                value: "/satabartosarkar123",
-                href: "https://github.com/satabartosarkar123",
-                icon: "⌘",
-              },
-            ].map((channel, idx) => (
-              <ScrollReveal key={channel.label} delay={idx * 0.15}>
-                <Link
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+            {channels.map((channel, idx) => (
+              <ScrollReveal key={channel.label} delay={idx * 0.08}>
+                <a
                   href={channel.href}
-                  target={
-                    channel.href.startsWith("http") ? "_blank" : undefined
-                  }
-                  rel={
-                    channel.href.startsWith("http")
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                  className="block stardust-hover rounded-xl p-8 bg-[#0F1F17]/60 backdrop-blur-sm text-center group"
+                  target={channel.isExternal ? "_blank" : undefined}
+                  rel={channel.isExternal ? "noopener noreferrer" : undefined}
+                  className="block rounded-xl p-6 bg-[#101624]/85 border border-white/10 hover:border-[#60A5FA]/45 backdrop-blur-sm group transition-all"
                 >
-                  <motion.div
-                    className="w-12 h-12 rounded-full bg-[#64FFDA]/8 border border-[#64FFDA]/15 flex items-center justify-center mx-auto mb-4 group-hover:shadow-[0_0_20px_rgba(100,255,218,0.15)] transition-all duration-500"
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    <span className="text-[#64FFDA] text-lg">
-                      {channel.icon}
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-[11px] font-mono text-[#60A5FA] uppercase tracking-wider">
+                      {channel.label}
                     </span>
-                  </motion.div>
-                  <h3 className="text-xs font-mono text-[#E8F5E9]/80 tracking-wider mb-2">
-                    {channel.label}
-                  </h3>
-                  <p className="text-[10px] font-mono text-[#81C784]/50 break-all">
+                    {channel.label === "Email" ? (
+                      <Mail className="w-4 h-4 text-[#94A3B8] group-hover:text-[#60A5FA]" />
+                    ) : channel.label === "Phone" ? (
+                      <Phone className="w-4 h-4 text-[#94A3B8] group-hover:text-[#60A5FA]" />
+                    ) : (
+                      <ExternalLink className="w-4 h-4 text-[#94A3B8] group-hover:text-[#60A5FA]" />
+                    )}
+                  </div>
+                  <p className="text-sm text-[#E2E8F0] font-mono break-all group-hover:text-white">
                     {channel.value}
                   </p>
-                </Link>
+                </a>
               </ScrollReveal>
             ))}
           </div>
 
-          {/* Phone + Location */}
-          <ScrollReveal delay={0.4}>
-            <div className="text-center space-y-3">
-              <p className="text-xs font-mono text-[#81C784]/40">
-                +91-8158933609 · Kolkata, India
+          <ScrollReveal delay={0.3}>
+            <div className="text-center pt-6 border-t border-white/10">
+              <p className="text-xs font-mono text-[#94A3B8]">
+                Kolkata, India · Institute of Engineering and Management (IEM)
               </p>
-              <div className="h-[1px] w-16 mx-auto bg-gradient-to-r from-transparent via-[#64FFDA]/20 to-transparent" />
-              <p className="text-[10px] font-mono text-[#81C784]/30 tracking-widest">
-                Open to internships, research, and engineering roles
-              </p>
-            </div>
-          </ScrollReveal>
-
-          {/* CV Download */}
-          <ScrollReveal delay={0.5}>
-            <div className="text-center mt-12">
-              <Link
-                href="/resume/Satabarto_Sarkar_CV.pdf"
-                target="_blank"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[#64FFDA]/20 text-[#64FFDA] text-xs font-mono tracking-wider hover:border-[#64FFDA]/50 hover:bg-[#64FFDA]/5 hover:shadow-[0_0_25px_rgba(100,255,218,0.1)] transition-all duration-500"
-              >
-                ↓ Download CV
-              </Link>
             </div>
           </ScrollReveal>
         </div>
