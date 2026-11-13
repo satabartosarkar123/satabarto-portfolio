@@ -263,7 +263,7 @@ export function HomeAwakening() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {/* Mentor 1: Sandip Chakraborty */}
             <div className="rounded-xl p-5 bg-[#101624]/90 border border-white/10 hover:border-[#60A5FA]/40 transition-colors flex gap-5 items-start">
               <div className="flex flex-col items-center gap-2 shrink-0">
@@ -370,6 +370,60 @@ export function HomeAwakening() {
                     className="inline-flex items-center gap-1 text-[#60A5FA] hover:underline ml-1"
                   >
                     Publications <ArrowRight className="w-3 h-3" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Mentor 3: Dr. D. Sobya */}
+            <div className="rounded-xl p-5 bg-[#101624]/90 border border-white/10 hover:border-[#38BDF8]/40 transition-colors flex gap-4 items-start">
+              <div className="flex flex-col items-center gap-2 shrink-0">
+                <MentorAvatar
+                  src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=hc5NaiEAAAAJ"
+                  alt="Dr. D. Sobya"
+                  initials="DS"
+                />
+                <a
+                  href="https://scholar.google.com/citations?user=hc5NaiEAAAAJ&hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Dr. D. Sobya — Google Scholar"
+                  className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-[#38BDF8]/10 border border-[#38BDF8]/25 text-[#7DD3FC] hover:bg-[#38BDF8]/20 text-[10px] font-mono transition-colors"
+                >
+                  <GoogleScholarIcon className="w-3 h-3" />
+                  <span>Scholar</span>
+                </a>
+              </div>
+
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-base font-semibold text-[#F8FAFC]">
+                    Dr. D. Sobya
+                  </h3>
+                  <span className="text-[10px] font-mono text-[#94A3B8]">
+                    Jul – Nov 2026
+                  </span>
+                </div>
+                <p className="text-xs font-mono text-[#38BDF8] mt-0.5 mb-2">
+                  Academic Mentor · SAR-TopoGuard
+                </p>
+                <p className="text-xs text-[#CBD5E1] leading-relaxed mb-3">
+                  Supervised SAR-TopoGuard: training-free, speckle-aware
+                  topological verification for structure-preserving
+                  SAR-to-optical translation (IEEE GRSL, Accepted in press).
+                </p>
+                <div className="flex flex-wrap items-center gap-1.5 text-[10px] font-mono">
+                  <Link
+                    href="/publications#sarkar2026sartopoguard"
+                    className="px-2 py-0.5 rounded bg-[#38BDF8]/15 text-[#7DD3FC] border border-[#38BDF8]/25 hover:bg-[#38BDF8]/30 transition-colors"
+                  >
+                    [J1]
+                  </Link>
+                  <Link
+                    href="/publications#sarkar2026sartopoguard"
+                    className="inline-flex items-center gap-1 text-[#60A5FA] hover:underline ml-1"
+                  >
+                    Publication <ArrowRight className="w-3 h-3" />
                   </Link>
                 </div>
               </div>
