@@ -1,11 +1,10 @@
 "use client";
 
-import { Check, Copy, ExternalLink, FileText, Users } from "lucide-react";
+import { Check, Copy, ExternalLink, FileText } from "lucide-react";
 import { useState } from "react";
 import { PageTransition } from "@/components/cosmos/PageTransition";
 import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
 import {
-  coAuthors,
   getCoAuthorScholarUrl,
   type Publication,
   publications,
@@ -202,7 +201,7 @@ export function PublicationsArchive() {
           )}
 
           {filter !== "accepted" && (
-            <div className="mb-14">
+            <div>
               <h2 className="text-xs font-mono text-[#FBBF24] uppercase tracking-widest mb-5">
                 Manuscripts Under Review
               </h2>
@@ -211,51 +210,6 @@ export function PublicationsArchive() {
               </div>
             </div>
           )}
-
-          {/* Co-Authors & Collaborators Subsection */}
-          <ScrollReveal delay={0.1}>
-            <div className="pt-8 border-t border-white/10">
-              <div className="flex items-center gap-2 mb-2">
-                <Users className="w-4 h-4 text-[#60A5FA]" />
-                <h2 className="text-xs font-mono text-[#60A5FA] uppercase tracking-widest">
-                  Co-Authors &amp; Research Collaborators
-                </h2>
-              </div>
-              <p className="text-xs text-[#94A3B8] mb-5">
-                Co-authors with linked Google Scholar profiles across the papers
-                above.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
-                {coAuthors.map((author) => (
-                  <a
-                    key={author.scholarId}
-                    href={author.scholarUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group rounded-xl p-4 bg-[#101624]/80 border border-white/10 hover:border-[#60A5FA]/40 transition-all flex items-center justify-between gap-3"
-                  >
-                    <div className="min-w-0">
-                      <p className="text-sm font-medium text-[#F8FAFC] group-hover:text-[#60A5FA] transition-colors truncate">
-                        {author.name}
-                      </p>
-                      <div className="flex flex-wrap gap-1 mt-1.5">
-                        {author.papers.map((code) => (
-                          <span
-                            key={code}
-                            className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/[0.05] text-[#94A3B8] border border-white/10"
-                          >
-                            [{code}]
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <ExternalLink className="w-3.5 h-3.5 text-[#94A3B8] group-hover:text-[#60A5FA] shrink-0 transition-colors" />
-                  </a>
-                ))}
-              </div>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
     </PageTransition>
