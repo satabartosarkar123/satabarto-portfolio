@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { PageTransition } from "@/components/cosmos/PageTransition";
 import { ScrollReveal } from "@/components/cosmos/ScrollReveal";
+import { publications } from "@/lib/publications";
 
 export function AboutMind() {
   return (
@@ -125,6 +127,52 @@ export function AboutMind() {
                       </span>
                     </div>
                   </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Publications */}
+          <ScrollReveal delay={0.55}>
+            <div className="mt-16">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-lg font-semibold text-[#E8F5E9] flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#b388ff]" />
+                  Publications
+                </h2>
+                <Link
+                  href="/publications"
+                  className="text-xs font-mono text-[#64FFDA]/70 hover:text-[#64FFDA] transition-colors"
+                >
+                  View Archive →
+                </Link>
+              </div>
+              <div className="space-y-4">
+                {publications.map((pub) => (
+                  <a
+                    key={pub.id}
+                    href={pub.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block p-5 rounded-lg border border-[#64FFDA]/8 hover:border-[#64FFDA]/25 bg-[#0F1F17]/30 transition-all duration-500"
+                  >
+                    <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
+                      <div>
+                        <p className="text-sm font-medium text-[#E8F5E9]">
+                          {pub.title}
+                        </p>
+                        <p className="text-xs text-[#81C784]/60 mt-1">
+                          {pub.authors.join(", ")}
+                        </p>
+                        <p className="text-[11px] font-mono text-[#64FFDA]/70 mt-1">
+                          {pub.venue} ({pub.year})
+                        </p>
+                      </div>
+                      <span className="text-[10px] font-mono text-[#b388ff]/80 px-2.5 py-1 rounded-full border border-[#7c4dff]/20 w-fit shrink-0">
+                        {pub.status}
+                      </span>
+                    </div>
+                  </a>
                 ))}
               </div>
             </div>

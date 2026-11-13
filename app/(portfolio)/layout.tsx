@@ -5,6 +5,7 @@ import { SanityLive } from "@/sanity/lib/live";
 import "../globals.css";
 import { draftMode } from "next/headers";
 import { VisualEditing } from "next-sanity/visual-editing";
+import { VisitorTracker } from "@/components/analytics/VisitorTracker";
 import { AppSidebar } from "@/components/app-sidebar";
 import { BreathingBackground } from "@/components/cosmos/BreathingBackground";
 import { CosmicNav } from "@/components/cosmos/CosmicNav";
@@ -25,9 +26,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Satabarto Sarkar — Systems Engineer",
+  metadataBase: new URL("https://satabartosarkar.vercel.app"),
+  title: "Satabarto Sarkar — Systems Engineer & Researcher",
   description:
-    "A living digital ecosystem revealing the mind of a systems-oriented engineer. Backend architectures, AI pipelines, and fault-tolerant design.",
+    "Portfolio of Satabarto Sarkar. Backend architectures, AI pipelines, fault-tolerant systems, and peer-reviewed research.",
+  authors: [
+    { name: "Satabarto Sarkar", url: "https://satabartosarkar.vercel.app" },
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Satabarto Sarkar — Systems Engineer & Researcher",
+    description:
+      "Portfolio of Satabarto Sarkar. Backend architectures, AI pipelines, fault-tolerant systems, and peer-reviewed research.",
+    url: "https://satabartosarkar.vercel.app",
+    siteName: "Satabarto Sarkar",
+    type: "website",
+  },
 };
 
 export default async function RootLayout({
@@ -53,6 +69,7 @@ export default async function RootLayout({
 
             {/* Navigation */}
             <CosmicNav />
+            <VisitorTracker />
 
             {/* Content */}
             <SidebarProvider defaultOpen={false}>

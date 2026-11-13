@@ -24,6 +24,10 @@ export async function POST(req: Request) {
       1. BANKLEDGER (Financial Backend Engine): Engineered a double-entry ledger system with 100% auditability, deriving balances via 5-stage MongoDB aggregations across 5 core models. Implemented a 10-step ACID-compliant transaction flow using MongoDB sessions, ensuring atomic multi-account updates with idempotency keys to prevent duplicates. Analyzed concurrency and scalability limits, identifying race conditions in balance validation and O(N) aggregation bottlenecks under high load.
       2. NUTINO (AI News Dashboard): Built async data ingestion and processing pipelines, reducing end-to-end transcription latency by 35%. Implemented a 3-stage ETL pipeline (ingestion, processing, summarization) supporting multi-hour audio sessions. Modularized pipeline using Python OOP and LangChain-based LLM routing, enabling multi-model switching with <5 min reconfiguration. Stack: Python, FastAPI, LangChain, Gemini, Mistral.
 
+      SATABARTO'S VERIFIED PUBLICATIONS:
+      1. SAR-TopoGuard: Training-Free, Speckle-Aware Topological Verification for Structure-Preserving SAR-to-Optical Translation (Satabarto Sarkar, Debojyoti Ghosh, Subhranil Biswas, Kaustav Mandal, D. Sobya) — IEEE Geoscience and Remote Sensing Letters, 2026 (Accepted, in press). DOI: 10.1109/LGRS.2026.3753492.
+      2. Pricing Symbolic Rules by What GNNs Leave Unlearned (Satabarto Sarkar, Prithwineel Paul) — Workshop on Graph Machine Learning (GraphML) at ACML 2026, Melbourne, Australia. arXiv:2611.12446 [cs.NE].
+
       SATABARTO'S SKILLS & CERTIFICATIONS:
       - Programming Languages: Java, Python, JavaScript, SQL, C
       - Web Technologies: HTML, CSS, React.js

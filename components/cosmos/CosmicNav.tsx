@@ -7,6 +7,7 @@ const routes = [
   { href: "/", label: "Home", region: "Awakening" },
   { href: "/about", label: "About", region: "Mind" },
   { href: "/projects", label: "Projects", region: "Constructs" },
+  { href: "/publications", label: "Publications", region: "Archive" },
   { href: "/experience", label: "Experience", region: "Timeline" },
   { href: "/skills", label: "Skills", region: "Ecosystem" },
   { href: "/contact", label: "Contact", region: "Signal" },
