@@ -22,7 +22,7 @@ const coursework = [
 export function AboutMind() {
   return (
     <PageTransition>
-      <section className="min-h-screen px-6 py-24">
+      <section className="min-h-screen px-4 sm:px-6 py-10 md:py-24">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <p className="text-[11px] font-mono text-[#60A5FA] tracking-[0.25em] uppercase mb-3">
@@ -31,12 +31,12 @@ export function AboutMind() {
             <h1 className="text-4xl md:text-5xl font-bold text-[#F8FAFC] mb-2">
               Education &amp; CV
             </h1>
-            <div className="h-[1px] w-24 bg-gradient-to-r from-[#60A5FA]/70 to-transparent mb-12" />
+            <div className="h-[1px] w-24 bg-gradient-to-r from-[#60A5FA]/70 to-transparent mb-8 md:mb-12" />
           </ScrollReveal>
 
           {/* Research Interests */}
           <ScrollReveal delay={0.05}>
-            <div className="rounded-xl p-7 bg-[#101624]/85 border border-white/10 backdrop-blur-sm mb-10">
+            <div className="rounded-xl p-5 sm:p-7 bg-[#101624]/85 border border-white/10 backdrop-blur-sm mb-8 md:mb-10">
               <p className="text-[11px] font-mono text-[#60A5FA] uppercase tracking-wider mb-2">
                 Research Interests
               </p>

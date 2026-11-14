@@ -32,7 +32,7 @@ export function PublicationsArchive() {
     <ScrollReveal key={pub.id} delay={Math.min(idx * 0.06, 0.25)}>
       <article
         id={pub.id}
-        className="scroll-mt-24 rounded-xl bg-[#101624]/85 border border-white/10 hover:border-[#60A5FA]/35 backdrop-blur-sm p-6 md:p-7 transition-all duration-300"
+        className="scroll-mt-24 rounded-xl bg-[#101624]/85 border border-white/10 hover:border-[#60A5FA]/35 backdrop-blur-sm p-5 sm:p-6 md:p-7 transition-all duration-300"
       >
         <div className="flex flex-wrap items-center justify-between gap-3 mb-3.5">
           <div className="flex flex-wrap items-center gap-2">
@@ -140,7 +140,7 @@ export function PublicationsArchive() {
 
   return (
     <PageTransition>
-      <section className="min-h-screen px-6 py-24">
+      <section className="min-h-screen px-4 sm:px-6 py-10 md:py-24">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <p className="text-[11px] font-mono text-[#60A5FA] tracking-[0.25em] uppercase mb-3">
@@ -150,7 +150,7 @@ export function PublicationsArchive() {
               <h1 className="text-4xl md:text-5xl font-bold text-[#F8FAFC]">
                 Publications
               </h1>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 {(
                   [
                     {

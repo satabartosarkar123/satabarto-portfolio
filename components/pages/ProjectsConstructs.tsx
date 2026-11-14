@@ -135,7 +135,7 @@ const researchProjects: ResearchProject[] = [
 export function ProjectsConstructs() {
   return (
     <PageTransition>
-      <section className="min-h-screen px-6 py-24">
+      <section className="min-h-screen px-4 sm:px-6 py-10 md:py-24">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <p className="text-[11px] font-mono text-[#60A5FA] tracking-[0.25em] uppercase mb-3">
@@ -149,16 +149,16 @@ export function ProjectsConstructs() {
               neuro-symbolic reasoning, and neuromorphic time-series
               forecasting.
             </p>
-            <div className="h-[1px] w-24 bg-gradient-to-r from-[#60A5FA]/70 to-transparent mb-14" />
+            <div className="h-[1px] w-24 bg-gradient-to-r from-[#60A5FA]/70 to-transparent mb-10 md:mb-14" />
           </ScrollReveal>
 
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             {researchProjects.map((project, idx) => (
               <ScrollReveal
                 key={project.title}
                 delay={Math.min(idx * 0.08, 0.3)}
               >
-                <article className="rounded-xl bg-[#101624]/85 border border-white/10 hover:border-[#60A5FA]/35 backdrop-blur-sm p-6 md:p-8 transition-all duration-300">
+                <article className="rounded-xl bg-[#101624]/85 border border-white/10 hover:border-[#60A5FA]/35 backdrop-blur-sm p-5 sm:p-6 md:p-8 transition-all duration-300">
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 mb-3">
                     <h2 className="text-xl md:text-2xl font-semibold text-[#F1F5F9] leading-snug">
                       {project.title}

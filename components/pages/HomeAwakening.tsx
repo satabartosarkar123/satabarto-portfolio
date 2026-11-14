@@ -47,7 +47,7 @@ function MentorAvatar({
   const [failed, setFailed] = useState(false);
   if (failed) {
     return (
-      <div className="w-16 h-16 rounded-full bg-[#161F33] border border-[#60A5FA]/40 flex items-center justify-center text-sm font-mono font-semibold text-[#93C5FD]">
+      <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-full bg-[#161F33] border border-[#60A5FA]/40 flex items-center justify-center text-sm font-mono font-semibold text-[#93C5FD]">
         {initials}
       </div>
     );
@@ -59,7 +59,7 @@ function MentorAvatar({
       width={64}
       height={64}
       onError={() => setFailed(true)}
-      className="w-16 h-16 rounded-full object-cover border-2 border-[#60A5FA]/40 shadow-[0_0_20px_rgba(96,165,250,0.18)]"
+      className="w-13 h-13 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-[#60A5FA]/40 shadow-[0_0_20px_rgba(96,165,250,0.18)]"
     />
   );
 }
@@ -93,16 +93,16 @@ const researchPillars = [
 
 export function HomeAwakening() {
   return (
-    <section className="min-h-screen px-6 py-14 relative">
+    <section className="min-h-screen px-4 sm:px-6 py-8 md:py-14 relative">
       <div className="max-w-6xl mx-auto w-full">
         {/* Hero */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center pt-4 pb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center pt-2 md:pt-4 pb-10">
           <div className="space-y-5">
             <motion.div
               initial={{ opacity: 0, x: -16 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-md border border-[#60A5FA]/25 bg-[#60A5FA]/10 text-[11px] font-mono text-[#93C5FD] tracking-wider uppercase"
+              className="inline-flex items-center gap-2.5 px-3 sm:px-3.5 py-1.5 rounded-md border border-[#60A5FA]/25 bg-[#60A5FA]/10 text-[10px] sm:text-[11px] font-mono text-[#93C5FD] tracking-wider uppercase"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#60A5FA]" />
               ML Researcher · B.Tech CSE (2023–2027)
@@ -112,7 +112,7 @@ export function HomeAwakening() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-6xl font-bold tracking-tight text-[#F8FAFC]"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#F8FAFC]"
             >
               Satabarto{" "}
               <span className="bg-gradient-to-r from-[#60A5FA] via-[#818CF8] to-[#38BDF8] bg-clip-text text-transparent">
@@ -241,7 +241,7 @@ export function HomeAwakening() {
             className="flex justify-center lg:justify-end"
           >
             <div className="relative p-1 rounded-2xl bg-gradient-to-br from-[#60A5FA]/40 via-[#818CF8]/25 to-white/10 shadow-[0_24px_64px_rgba(0,0,0,0.6)]">
-              <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-xl overflow-hidden bg-[#101624]">
+              <div className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-xl overflow-hidden bg-[#101624]">
                 <Image
                   src="/images/satabarto-hero-latest.jpg"
                   alt="Satabarto Sarkar"
@@ -267,7 +267,7 @@ export function HomeAwakening() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {/* Mentor 1: Dr. Sandip Chakraborty */}
-            <div className="rounded-xl p-5 bg-[#101624]/90 border border-white/10 hover:border-[#60A5FA]/40 transition-colors flex gap-5 items-start">
+            <div className="rounded-xl p-4 sm:p-5 bg-[#101624]/90 border border-white/10 hover:border-[#60A5FA]/40 transition-colors flex gap-3.5 sm:gap-5 items-start">
               <div className="flex flex-col items-center gap-2 shrink-0">
                 <MentorAvatar
                   src="/images/mentors/sandip-chakraborty.jpg"
@@ -314,7 +314,7 @@ export function HomeAwakening() {
             </div>
 
             {/* Mentor 2: Dr. Prithwineel Paul */}
-            <div className="rounded-xl p-5 bg-[#101624]/90 border border-white/10 hover:border-[#818CF8]/40 transition-colors flex gap-5 items-start">
+            <div className="rounded-xl p-4 sm:p-5 bg-[#101624]/90 border border-white/10 hover:border-[#818CF8]/40 transition-colors flex gap-3.5 sm:gap-5 items-start">
               <div className="flex flex-col items-center gap-2 shrink-0">
                 <MentorAvatar
                   src="/images/mentors/prithwineel-paul.jpg"
@@ -378,7 +378,7 @@ export function HomeAwakening() {
             </div>
 
             {/* Mentor 3: Dr. D. Sobya */}
-            <div className="rounded-xl p-5 bg-[#101624]/90 border border-white/10 hover:border-[#38BDF8]/40 transition-colors flex gap-4 items-start">
+            <div className="rounded-xl p-4 sm:p-5 bg-[#101624]/90 border border-white/10 hover:border-[#38BDF8]/40 transition-colors flex gap-3.5 sm:gap-4 items-start">
               <div className="flex flex-col items-center gap-2 shrink-0">
                 <MentorAvatar
                   src="/images/mentors/d-sobya.jpg"

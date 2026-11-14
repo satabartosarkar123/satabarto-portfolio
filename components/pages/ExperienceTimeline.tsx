@@ -51,7 +51,7 @@ const experiences = [
 export function ExperienceTimeline() {
   return (
     <PageTransition>
-      <section className="min-h-screen px-6 py-24">
+      <section className="min-h-screen px-4 sm:px-6 py-10 md:py-24">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <p className="text-[11px] font-mono text-[#60A5FA] tracking-[0.25em] uppercase mb-3">
@@ -63,19 +63,19 @@ export function ExperienceTimeline() {
             <p className="text-sm text-[#94A3B8] max-w-lg mb-3">
               Applied systems research and backend software engineering roles.
             </p>
-            <div className="h-[1px] w-24 bg-gradient-to-r from-[#60A5FA]/70 to-transparent mb-14" />
+            <div className="h-[1px] w-24 bg-gradient-to-r from-[#60A5FA]/70 to-transparent mb-10 md:mb-14" />
           </ScrollReveal>
 
           <div className="relative">
-            <div className="absolute left-4 md:left-6 top-0 bottom-0 w-[1px] bg-gradient-to-b from-[#60A5FA]/40 via-[#818CF8]/20 to-transparent" />
+            <div className="absolute left-2.5 md:left-6 top-0 bottom-0 w-[1px] bg-gradient-to-b from-[#60A5FA]/40 via-[#818CF8]/20 to-transparent" />
 
-            <div className="space-y-10">
+            <div className="space-y-8 md:space-y-10">
               {experiences.map((exp, idx) => (
                 <ScrollReveal key={exp.company} delay={idx * 0.15}>
-                  <div className="relative pl-12 md:pl-16">
-                    <div className="absolute left-2.5 md:left-4.5 top-8 w-3 h-3 rounded-sm bg-[#60A5FA] shadow-[0_0_12px_rgba(96,165,250,0.4)]" />
+                  <div className="relative pl-8 md:pl-16">
+                    <div className="absolute left-1 md:left-4.5 top-8 w-3 h-3 rounded-sm bg-[#60A5FA] shadow-[0_0_12px_rgba(96,165,250,0.4)]" />
 
-                    <div className="rounded-xl bg-[#101624]/85 border border-white/10 hover:border-[#60A5FA]/35 backdrop-blur-sm p-6 md:p-8 transition-colors">
+                    <div className="rounded-xl bg-[#101624]/85 border border-white/10 hover:border-[#60A5FA]/35 backdrop-blur-sm p-5 sm:p-6 md:p-8 transition-colors">
                       <div className="flex flex-col md:flex-row md:items-start justify-between gap-2 mb-3">
                         <div>
                           <h2 className="text-xl font-semibold text-[#F8FAFC]">

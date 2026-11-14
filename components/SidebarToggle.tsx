@@ -10,7 +10,7 @@ function SidebarToggle() {
 
   if (isSidebarOpen) return null;
 
-  const buttonStyles = `relative w-16 h-16 rounded-full 
+  const buttonStyles = `relative w-12 h-12 sm:w-16 sm:h-16 rounded-full 
     bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 
     dark:from-violet-600 dark:via-purple-600 dark:to-fuchsia-600 
     shadow-[0_0_40px_rgba(168,85,247,0.4)] 
@@ -20,7 +20,7 @@ function SidebarToggle() {
     flex items-center justify-center`;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 group">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 group">
       {/* Animated rings */}
       <div className="absolute inset-0 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 opacity-20 blur-2xl animate-ping [animation-duration:2s]" />
       <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 opacity-30 blur-xl animate-pulse [animation-duration:3s]" />
@@ -45,7 +45,7 @@ function SidebarToggle() {
         className={buttonStyles}
         aria-label="Chat with AI Twin"
       >
-        <MessageSquare className="h-7 w-7 text-white transition-transform group-hover:scale-110" />
+        <MessageSquare className="h-5 w-5 sm:h-7 sm:w-7 text-white transition-transform group-hover:scale-110" />
       </button>
     </div>
   );

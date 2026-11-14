@@ -61,7 +61,7 @@ const clusters = [
 export function SkillsEcosystem() {
   return (
     <PageTransition>
-      <section className="min-h-screen px-6 py-24">
+      <section className="min-h-screen px-4 sm:px-6 py-10 md:py-24">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <p className="text-[11px] font-mono text-[#60A5FA] tracking-[0.25em] uppercase mb-3">
@@ -74,7 +74,7 @@ export function SkillsEcosystem() {
               Tools, statistical rigor, and mathematical foundations used across
               research and systems work.
             </p>
-            <div className="h-[1px] w-24 bg-gradient-to-r from-[#60A5FA]/70 to-transparent mb-14" />
+            <div className="h-[1px] w-24 bg-gradient-to-r from-[#60A5FA]/70 to-transparent mb-10 md:mb-14" />
           </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -107,7 +107,7 @@ export function ContactSignal() {
 
   return (
     <PageTransition>
-      <section className="min-h-screen px-6 py-24 flex items-center">
+      <section className="min-h-screen px-4 sm:px-6 py-10 md:py-24 flex items-center">
         <div className="max-w-4xl mx-auto w-full">
           <ScrollReveal>
             <p className="text-[11px] font-mono text-[#60A5FA] tracking-[0.25em] uppercase mb-3">
@@ -120,12 +120,12 @@ export function ContactSignal() {
               Open to research collaborations, PhD/internship opportunities, and
               ML systems roles.
             </p>
-            <div className="h-[1px] w-24 bg-gradient-to-r from-[#60A5FA]/70 to-transparent mb-12" />
+            <div className="h-[1px] w-24 bg-gradient-to-r from-[#60A5FA]/70 to-transparent mb-8 md:mb-12" />
           </ScrollReveal>
 
           {/* Direct Inquiry Form */}
           <ScrollReveal delay={0.05}>
-            <div className="rounded-2xl p-6 md:p-8 bg-[#101624]/90 border border-white/10 backdrop-blur-sm mb-10">
+            <div className="rounded-2xl p-5 sm:p-6 md:p-8 bg-[#101624]/90 border border-white/10 backdrop-blur-sm mb-10">
               <div className="mb-6">
                 <p className="text-[11px] font-mono text-[#60A5FA] uppercase tracking-[0.2em] mb-1">
                   Direct Inquiry
@@ -244,14 +244,14 @@ export function ContactSignal() {
                   </div>
                 )}
 
-                <div className="flex items-center justify-between pt-1">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1">
                   <span className="text-[11px] font-mono text-[#64748B]">
                     Delivered to satabartosarkar005@gmail.com
                   </span>
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="inline-flex items-center gap-2 rounded-lg bg-[#60A5FA] hover:bg-[#93C5FD] disabled:opacity-60 text-[#080B12] font-semibold text-sm px-5 py-2.5 transition-colors cursor-pointer"
+                    className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#60A5FA] hover:bg-[#93C5FD] disabled:opacity-60 text-[#080B12] font-semibold text-sm px-5 py-2.5 w-full sm:w-auto transition-colors cursor-pointer"
                   >
                     <Send className="w-4 h-4" />
                     {status === "sending" ? "Sending..." : "Send Message"}
